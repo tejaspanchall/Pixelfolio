@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Pixelated Portfolio Design System - 8-bit Retro Theme
+All colors MUST be HSL. Pixelated aesthetic with terminal vibes.
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Courier+Prime:wght@400;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark terminal background theme */
+    --background: 220 13% 8%;
+    --foreground: 120 100% 85%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 13% 12%;
+    --card-foreground: 120 100% 85%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 13% 12%;
+    --popover-foreground: 120 100% 85%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Retro terminal green as primary */
+    --primary: 120 100% 50%;
+    --primary-foreground: 220 13% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Amber/orange secondary for accents */
+    --secondary: 45 100% 60%;
+    --secondary-foreground: 220 13% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted terminal gray */
+    --muted: 220 13% 16%;
+    --muted-foreground: 120 20% 60%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Bright cyan accent */
+    --accent: 180 100% 60%;
+    --accent-foreground: 220 13% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Retro red for errors */
+    --destructive: 0 100% 65%;
+    --destructive-foreground: 220 13% 8%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Pixel borders and inputs */
+    --border: 120 30% 25%;
+    --input: 220 13% 16%;
+    --ring: 120 100% 50%;
 
-    --radius: 0.5rem;
+    /* Sharp pixel radius */
+    --radius: 0px;
+
+    /* Pixel-specific colors */
+    --pixel-blue: 240 100% 60%;
+    --pixel-purple: 280 100% 70%;
+    --pixel-pink: 320 100% 75%;
+    
+    /* Shadows for depth */
+    --shadow-pixel: 4px 4px 0px hsl(var(--primary));
+    --shadow-pixel-hover: 6px 6px 0px hsl(var(--primary));
+    --shadow-dark: 4px 4px 0px hsl(220 13% 4%);
+    
+    /* Animations */
+    --transition-pixel: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +123,67 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-mono;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+}
+
+@layer components {
+  /* Pixel button styles */
+  .btn-pixel {
+    @apply border-2 border-primary bg-card text-primary font-bold px-4 py-2 transition-all duration-100;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    box-shadow: var(--shadow-pixel);
+  }
+  
+  .btn-pixel:hover {
+    @apply bg-primary text-primary-foreground;
+    box-shadow: var(--shadow-pixel-hover);
+    transform: translate(-2px, -2px);
+  }
+  
+  .btn-pixel:active {
+    box-shadow: 2px 2px 0px hsl(var(--primary));
+    transform: translate(2px, 2px);
+  }
+
+  /* Pixel card styles */
+  .card-pixel {
+    @apply bg-card border-2 border-primary p-6;
+    box-shadow: var(--shadow-pixel);
+  }
+  
+  .card-pixel:hover {
+    box-shadow: var(--shadow-pixel-hover);
+    transform: translate(-2px, -2px);
+  }
+
+  /* Terminal text effect */
+  .text-terminal {
+    font-family: 'Courier Prime', monospace;
+    @apply text-primary;
+  }
+  
+  .text-pixel {
+    font-family: 'Press Start 2P', monospace;
+  }
+
+  /* Scanline effect */
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      transparent 50%, 
+      rgba(0, 255, 0, 0.03) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
   }
 }

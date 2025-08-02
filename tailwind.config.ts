@@ -61,7 +61,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				pixel: {
+					blue: 'hsl(var(--pixel-blue))',
+					purple: 'hsl(var(--pixel-purple))',
+					pink: 'hsl(var(--pixel-pink))'
 				}
+			},
+			fontFamily: {
+				pixel: ['Press Start 2P', 'monospace'],
+				terminal: ['Courier Prime', 'monospace'],
+			},
+			boxShadow: {
+				pixel: 'var(--shadow-pixel)',
+				'pixel-hover': 'var(--shadow-pixel-hover)',
+				'pixel-dark': 'var(--shadow-dark)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
