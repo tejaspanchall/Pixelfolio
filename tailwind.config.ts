@@ -62,20 +62,21 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				pixel: {
-					blue: 'hsl(var(--pixel-blue))',
-					purple: 'hsl(var(--pixel-purple))',
-					pink: 'hsl(var(--pixel-pink))'
+				gaming: {
+					green: 'hsl(var(--neon-green))',
+					yellow: 'hsl(var(--neon-yellow))',
+					orange: 'hsl(var(--neon-orange))',
+					purple: 'hsl(var(--neon-purple))'
 				}
 			},
 			fontFamily: {
 				pixel: ['Press Start 2P', 'monospace'],
-				terminal: ['Courier Prime', 'monospace'],
+				gamer: ['Orbitron', 'monospace'],
 			},
 			boxShadow: {
-				pixel: 'var(--shadow-pixel)',
-				'pixel-hover': 'var(--shadow-pixel-hover)',
-				'pixel-dark': 'var(--shadow-dark)',
+				neon: 'var(--shadow-neon)',
+				'neon-hover': 'var(--shadow-neon-hover)',
+				'neon-pink': 'var(--shadow-pink)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -8,7 +8,7 @@ interface PixelButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const PixelButton = forwardRef<HTMLButtonElement, PixelButtonProps>(
   ({ className, variant = "primary", size = "md", ...props }, ref) => {
-    const baseClasses = "btn-pixel";
+    const baseClasses = "btn-game";
     
     const variantClasses = {
       primary: "border-primary text-primary hover:bg-primary hover:text-primary-foreground",

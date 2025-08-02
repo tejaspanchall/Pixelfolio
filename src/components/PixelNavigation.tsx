@@ -15,13 +15,13 @@ const PixelNavigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-card border-b-2 border-primary p-4 relative z-50">
+    <nav className="bg-card border-b-2 border-primary p-4 relative z-50 shadow-neon">
       <div className="container mx-auto flex justify-between items-center">
         <Link 
           to="/" 
-          className="text-pixel text-primary text-xl hover:text-accent transition-colors"
+          className="text-pixel text-primary text-xl hover:text-accent transition-colors neon-glow"
         >
-          &lt;DEV.EXE&gt;
+          🎮 GAMER.DEV
         </Link>
 
         {/* Desktop Navigation */}

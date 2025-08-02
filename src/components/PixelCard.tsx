@@ -10,8 +10,8 @@ const PixelCard = forwardRef<HTMLDivElement, PixelCardProps>(
     return (
       <div
         className={cn(
-          "card-pixel transition-all duration-100",
-          hover && "hover:shadow-pixel-hover hover:-translate-x-1 hover:-translate-y-1",
+          "card-game transition-all duration-200",
+          hover && "hover:shadow-neon-hover hover:-translate-x-1 hover:-translate-y-1",
           className
         )}
         ref={ref}

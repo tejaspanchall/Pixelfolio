@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import PixelNavigation from "@/components/PixelNavigation";
 import PixelCard from "@/components/PixelCard";
 import PixelButton from "@/components/PixelButton";
-import heroImage from "@/assets/pixel-hero.png";
+import gamerHero from "@/assets/gamer-hero.png";
 
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "SOFTWARE_ENGINEER.EXE";
+  const fullText = "LEVEL UP YOUR CODE!";
 
   useEffect(() => {
     let currentIndex = 0;
@@ -24,29 +24,29 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background relative scanlines">
+    <div className="min-h-screen bg-background relative game-scanlines">
       <PixelNavigation />
       
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
-            <div className="text-terminal text-sm text-muted-foreground">
-              &gt; INITIALIZING_PORTFOLIO_SYSTEM...
+            <div className="text-gamer text-sm text-muted-foreground">
+              ⚡ PLAYER READY... INITIALIZING PORTFOLIO ⚡
             </div>
             
-            <h1 className="text-pixel text-3xl md:text-4xl text-primary">
+            <h1 className="text-pixel text-3xl md:text-4xl text-primary neon-glow">
               {displayText}
-              <span className="animate-pulse">_</span>
+              <span className="animate-pulse text-accent">█</span>
             </h1>
             
-            <div className="space-y-4 text-terminal">
-              <p className="text-lg text-accent">
-                &gt; TRANSFORMING_IDEAS_INTO_CODE
+            <div className="space-y-4 text-gamer">
+              <p className="text-lg text-secondary neon-glow">
+                🎯 CRAFTING EPIC DIGITAL EXPERIENCES
               </p>
               <p className="text-foreground leading-relaxed">
-                Welcome to my digital realm! I'm a passionate developer who crafts 
-                exceptional web experiences with modern technologies and pixel-perfect attention to detail.
+                Welcome to my gaming-inspired dev world! I'm a passionate developer who 
+                creates legendary web applications with modern tech stacks and pixel-perfect precision.
               </p>
             </div>
             
@@ -66,28 +66,32 @@ const Index = () => {
           
           <div className="relative">
             <img 
-              src={heroImage} 
-              alt="Pixel art developer"
-              className="w-full h-auto border-2 border-primary shadow-pixel"
+              src={gamerHero} 
+              alt="Gaming developer character"
+              className="w-full h-auto border-2 border-primary shadow-neon"
             />
-            <div className="absolute -bottom-2 -right-2 bg-accent text-accent-foreground px-2 py-1">
-              <span className="text-pixel text-xs">ONLINE</span>
+            <div className="absolute -bottom-2 -right-2 achievement">
+              <span className="text-pixel text-xs">🔥 ONLINE</span>
+            </div>
+            <div className="absolute -top-2 -left-2 bg-gaming-green text-black px-2 py-1">
+              <span className="text-pixel text-xs">LVL 99</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Stats */}
+      {/* Gaming Stats */}
       <section className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "PROJECTS", value: "25+" },
-            { label: "EXPERIENCE", value: "5Y" },
-            { label: "TECHNOLOGIES", value: "20+" },
-            { label: "COFFEE_CUPS", value: "9999+" }
+            { label: "GAMES COMPLETED", value: "25+", icon: "🎮" },
+            { label: "XP YEARS", value: "5Y", icon: "⭐" },
+            { label: "TECH STACK", value: "20+", icon: "🛠️" },
+            { label: "COFFEE RESPAWNS", value: "∞", icon: "☕" }
           ].map((stat) => (
             <PixelCard key={stat.label} className="text-center">
-              <div className="text-pixel text-xl text-primary mb-2">
+              <div className="text-2xl mb-2">{stat.icon}</div>
+              <div className="text-pixel text-xl text-primary mb-2 neon-glow">
                 {stat.value}
               </div>
               <div className="text-pixel text-xs text-muted-foreground">
@@ -98,28 +102,31 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Work */}
+      {/* Featured Quests */}
       <section className="container mx-auto px-4 py-8">
-        <h2 className="text-pixel text-2xl text-accent mb-8 text-center">
-          FEATURED_WORK.SHOWCASE
+        <h2 className="text-pixel text-2xl text-accent mb-8 text-center neon-glow">
+          🏆 FEATURED QUESTS
         </h2>
         
         <div className="grid md:grid-cols-3 gap-6">
           {[
             {
-              title: "E-COMMERCE.PLATFORM",
+              title: "E-SHOP ADVENTURE",
               tech: ["REACT", "NODE.JS"],
-              status: "LIVE"
+              status: "COMPLETED",
+              difficulty: "⭐⭐⭐"
             },
             {
-              title: "TASK_MANAGER.APP",
+              title: "TASK MASTER RPG",
               tech: ["TYPESCRIPT", "SUPABASE"],
-              status: "BETA"
+              status: "IN PROGRESS",
+              difficulty: "⭐⭐⭐⭐"
             },
             {
-              title: "AI_CHATBOT.SYS",
+              title: "AI COMPANION",
               tech: ["PYTHON", "ML"],
-              status: "DEV"
+              status: "BETA TEST",
+              difficulty: "⭐⭐⭐⭐⭐"
             }
           ].map((project, index) => (
             <PixelCard key={project.title}>

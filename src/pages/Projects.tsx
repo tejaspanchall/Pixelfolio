@@ -64,16 +64,16 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background relative scanlines">
+    <div className="min-h-screen bg-background relative game-scanlines">
       <PixelNavigation />
       
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-pixel text-2xl text-primary mb-4">
-            PROJECTS.DIR
+          <h1 className="text-pixel text-2xl text-primary mb-4 neon-glow">
+            🎮 PROJECT ARCADE
           </h1>
-          <p className="text-terminal text-muted-foreground">
-            &gt; SHOWCASING_RECENT_WORK_AND_EXPERIMENTS
+          <p className="text-gamer text-muted-foreground">
+            ⚡ SHOWCASING COMPLETED QUESTS AND BOSS BATTLES
           </p>
         </div>
 
