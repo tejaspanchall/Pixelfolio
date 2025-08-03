@@ -10,54 +10,54 @@ All colors MUST be HSL. Bright arcade gaming aesthetic.
 
 @layer base {
   :root {
-    /* Dark gaming background theme */
-    --background: 240 20% 8%;
-    --foreground: 280 100% 90%;
+    /* Soft pastel background theme */
+    --background: 250 20% 95%;
+    --foreground: 280 15% 25%;
 
-    --card: 240 20% 12%;
-    --card-foreground: 280 100% 90%;
+    --card: 250 30% 98%;
+    --card-foreground: 280 15% 25%;
 
-    --popover: 240 20% 12%;
-    --popover-foreground: 280 100% 90%;
+    --popover: 250 30% 98%;
+    --popover-foreground: 280 15% 25%;
 
-    /* Electric blue as primary gaming color */
-    --primary: 220 100% 60%;
-    --primary-foreground: 240 20% 8%;
+    /* Soft pastel blue as primary */
+    --primary: 220 40% 75%;
+    --primary-foreground: 220 30% 15%;
 
-    /* Hot pink secondary for accents */
-    --secondary: 320 100% 70%;
-    --secondary-foreground: 240 20% 8%;
+    /* Soft pastel pink secondary */
+    --secondary: 320 35% 80%;
+    --secondary-foreground: 320 25% 20%;
 
-    /* Dark purple muted */
-    --muted: 260 20% 16%;
-    --muted-foreground: 280 30% 65%;
+    /* Light pastel purple muted */
+    --muted: 260 20% 90%;
+    --muted-foreground: 280 15% 45%;
 
-    /* Neon cyan accent */
-    --accent: 180 100% 70%;
-    --accent-foreground: 240 20% 8%;
+    /* Soft pastel mint accent */
+    --accent: 180 35% 75%;
+    --accent-foreground: 180 25% 20%;
 
-    /* Gaming red for errors */
-    --destructive: 0 100% 65%;
-    --destructive-foreground: 240 20% 8%;
+    /* Soft pastel red for errors */
+    --destructive: 0 40% 70%;
+    --destructive-foreground: 0 30% 20%;
 
-    /* Gaming borders and inputs */
-    --border: 280 50% 30%;
-    --input: 240 20% 16%;
-    --ring: 220 100% 60%;
+    /* Soft borders and inputs */
+    --border: 280 20% 80%;
+    --input: 250 20% 92%;
+    --ring: 220 40% 75%;
 
     /* Sharp pixel radius for gaming look */
     --radius: 0px;
 
-    /* Gaming-specific colors */
-    --neon-green: 120 100% 60%;
-    --neon-yellow: 60 100% 70%;
-    --neon-orange: 30 100% 65%;
-    --neon-purple: 280 100% 70%;
+    /* Pastel gaming colors */
+    --neon-green: 120 35% 70%;
+    --neon-yellow: 60 40% 75%;
+    --neon-orange: 30 40% 75%;
+    --neon-purple: 280 35% 75%;
     
-    /* Gaming shadows with neon glow */
-    --shadow-neon: 0 0 20px hsl(var(--primary)), 4px 4px 0px hsl(var(--primary));
-    --shadow-neon-hover: 0 0 30px hsl(var(--primary)), 6px 6px 0px hsl(var(--primary));
-    --shadow-pink: 0 0 20px hsl(var(--secondary)), 4px 4px 0px hsl(var(--secondary));
+    /* Soft shadows without glow */
+    --shadow-neon: 4px 4px 0px hsl(var(--primary));
+    --shadow-neon-hover: 6px 6px 0px hsl(var(--primary));
+    --shadow-pink: 4px 4px 0px hsl(var(--secondary));
     
     /* Gaming animations */
     --transition-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -148,7 +148,7 @@ All colors MUST be HSL. Bright arcade gaming aesthetic.
   }
   
   .btn-game:active {
-    box-shadow: 0 0 10px hsl(var(--primary)), 2px 2px 0px hsl(var(--primary));
+    box-shadow: 2px 2px 0px hsl(var(--primary));
     transform: translate(2px, 2px) scale(0.95);
   }
 
@@ -189,12 +189,9 @@ All colors MUST be HSL. Bright arcade gaming aesthetic.
     font-family: 'Press Start 2P', monospace;
   }
 
-  /* Neon glow effects */
+  /* Removed glow effects for pastel theme */
   .neon-glow {
-    text-shadow: 
-      0 0 5px currentColor,
-      0 0 10px currentColor,
-      0 0 15px currentColor;
+    /* No text shadow for pastel theme */
   }
 
   /* Gaming health/progress bar */
@@ -221,8 +218,7 @@ All colors MUST be HSL. Bright arcade gaming aesthetic.
 
   /* Gaming achievement badge */
   .achievement {
-    @apply bg-gradient-to-r from-secondary to-accent text-white px-3 py-1 border-2 border-accent;
-    box-shadow: 0 0 15px hsl(var(--accent));
+    @apply bg-gradient-to-r from-secondary to-accent text-accent-foreground px-3 py-1 border-2 border-accent;
     animation: pulse 2s infinite;
   }
 
