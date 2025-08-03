@@ -45,21 +45,21 @@ const Index = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <div className="text-gamer text-sm text-muted-foreground">
-              ⚡ PLAYER READY... INITIALIZING PORTFOLIO ⚡
+              ⚡ WELCOME TO MY PORTFOLIO ⚡
             </div>
             
-            <h1 className="text-pixel text-3xl md:text-4xl text-primary neon-glow">
+            <h1 className="text-pixel text-3xl md:text-4xl text-primary">
               {displayText}
               <span className="animate-pulse text-accent">█</span>
             </h1>
             
             <div className="space-y-4 text-gamer">
-              <p className="text-lg text-secondary neon-glow">
-                🎯 CRAFTING EPIC DIGITAL EXPERIENCES
+              <p className="text-lg text-secondary">
+                🎯 BUILDING INNOVATIVE DIGITAL SOLUTIONS
               </p>
               <p className="text-foreground leading-relaxed">
-                Welcome to my gaming-inspired dev world! I'm a passionate developer who 
-                creates legendary web applications with modern tech stacks and pixel-perfect precision.
+                Welcome to my development portfolio! I'm a passionate developer who 
+                creates robust web applications with modern tech stacks and attention to detail.
               </p>
             </div>
             
@@ -80,31 +80,31 @@ const Index = () => {
           <div className="relative">
             <img 
               src={gamerHero} 
-              alt="Gaming developer character"
-              className="w-full h-auto border-2 border-primary shadow-neon"
+              alt="Developer workspace"
+              className="w-full h-auto border-2 border-primary"
             />
-            <div className="absolute -bottom-2 -right-2 achievement">
-              <span className="text-pixel text-xs">🔥 ONLINE</span>
+            <div className="absolute -bottom-2 -right-2 bg-primary text-black px-2 py-1">
+              <span className="text-pixel text-xs">💼 AVAILABLE</span>
             </div>
-            <div className="absolute -top-2 -left-2 bg-gaming-green text-black px-2 py-1">
-              <span className="text-pixel text-xs">LVL 99</span>
+            <div className="absolute -top-2 -left-2 bg-accent text-black px-2 py-1">
+              <span className="text-pixel text-xs">5+ YRS</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Gaming Stats */}
+      {/* Developer Stats */}
       <section className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "GAMES COMPLETED", value: "25+", icon: "🎮" },
-            { label: "XP YEARS", value: "5Y", icon: "⭐" },
+            { label: "PROJECTS BUILT", value: "25+", icon: "💻" },
+            { label: "EXPERIENCE", value: "5Y", icon: "⭐" },
             { label: "TECH STACK", value: "20+", icon: "🛠️" },
-            { label: "COFFEE RESPAWNS", value: "∞", icon: "☕" }
+            { label: "COFFEE CONSUMED", value: "∞", icon: "☕" }
           ].map((stat) => (
             <PixelCard key={stat.label} className="text-center">
               <div className="text-2xl mb-2">{stat.icon}</div>
-              <div className="text-pixel text-xl text-primary mb-2 neon-glow">
+              <div className="text-pixel text-xl text-primary mb-2">
                 {stat.value}
               </div>
               <div className="text-pixel text-xs text-muted-foreground">
@@ -115,31 +115,31 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Quests */}
+      {/* Featured Projects */}
       <section className="container mx-auto px-4 py-8">
-        <h2 className="text-pixel text-2xl text-accent mb-8 text-center neon-glow">
-          🏆 FEATURED QUESTS
+        <h2 className="text-pixel text-2xl text-accent mb-8 text-center">
+          🏆 FEATURED PROJECTS
         </h2>
         
         <div className="grid md:grid-cols-3 gap-6">
           {[
             {
-              title: "E-SHOP ADVENTURE",
+              title: "E-COMMERCE PLATFORM",
               tech: ["REACT", "NODE.JS"],
               status: "COMPLETED",
-              difficulty: "⭐⭐⭐"
+              complexity: "⭐⭐⭐"
             },
             {
-              title: "TASK MASTER RPG",
+              title: "TASK MANAGEMENT APP",
               tech: ["TYPESCRIPT", "SUPABASE"],
               status: "IN PROGRESS",
-              difficulty: "⭐⭐⭐⭐"
+              complexity: "⭐⭐⭐⭐"
             },
             {
-              title: "AI COMPANION",
+              title: "AI CHATBOT",
               tech: ["PYTHON", "ML"],
-              status: "BETA TEST",
-              difficulty: "⭐⭐⭐⭐⭐"
+              status: "BETA",
+              complexity: "⭐⭐⭐⭐⭐"
             }
           ].map((project, index) => (
             <PixelCard key={project.title}>
@@ -171,7 +171,7 @@ const Index = () => {
         <div className="text-center mt-8">
           <Link to="/projects">
             <PixelButton variant="primary">
-              LOAD_ALL_PROJECTS.EXE
+              VIEW_ALL_PROJECTS
             </PixelButton>
           </Link>
         </div>
