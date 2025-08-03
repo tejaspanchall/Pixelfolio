@@ -7,21 +7,34 @@ import gamerHero from "@/assets/gamer-hero.png";
 
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "LEVEL UP YOUR CODE!";
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  
+  const titles = [
+    "SOFTWARE ENGINEER",
+    "FRONTEND DEVELOPER", 
+    "FULLSTACK DEVELOPER",
+    "WEB DEVELOPER"
+  ];
 
   useEffect(() => {
     let currentIndex = 0;
+    const currentTitle = titles[currentTitleIndex];
+    
     const interval = setInterval(() => {
-      if (currentIndex <= fullText.length) {
-        setDisplayText(fullText.slice(0, currentIndex));
+      if (currentIndex <= currentTitle.length) {
+        setDisplayText(currentTitle.slice(0, currentIndex));
         currentIndex++;
       } else {
         clearInterval(interval);
+        // Wait 2 seconds then move to next title
+        setTimeout(() => {
+          setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
+        }, 2000);
       }
     }, 100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentTitleIndex]);
 
   return (
     <div className="min-h-screen bg-background relative game-scanlines">
