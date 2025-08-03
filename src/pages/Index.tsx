@@ -81,8 +81,14 @@ const Index = () => {
             <img 
               src={gamerHero} 
               alt="Developer workspace"
-              className="w-full h-auto rounded-lg shadow-lg border border-border/20"
+              className="w-full h-auto border-2 border-primary"
             />
+            <div className="absolute -bottom-2 -right-2 bg-primary text-black px-2 py-1">
+              <span className="text-pixel text-xs">💼 AVAILABLE</span>
+            </div>
+            <div className="absolute -top-2 -left-2 bg-accent text-black px-2 py-1">
+              <span className="text-pixel text-xs">5+ YRS</span>
+            </div>
           </div>
         </div>
       </section>
