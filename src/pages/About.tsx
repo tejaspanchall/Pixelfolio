@@ -77,34 +77,71 @@ const About = () => {
           </PixelCard>
         </div>
 
-        {/* Quest Log */}
+        {/* Work Experience */}
         <PixelCard className="mt-8">
-          <h2 className="text-pixel text-xl text-primary mb-6 neon-glow">📜 QUEST LOG</h2>
+          <h2 className="text-pixel text-xl text-primary mb-6 neon-glow">💼 WORK EXPERIENCE</h2>
           <div className="space-y-6 text-gamer">
-            <div className="border-l-4 border-primary pl-4 relative">
-              <div className="absolute -left-2 top-0 w-4 h-4 bg-primary"></div>
-              <div className="text-accent text-pixel text-sm mb-2">
-                [2023-PRESENT] 🏆 SENIOR QUEST LEADER
+            <div className="border-l-4 border-primary pl-6 relative">
+              <div className="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full"></div>
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                <div>
+                  <h3 className="text-accent text-pixel text-base font-bold mb-1">
+                    Senior Software Engineer
+                  </h3>
+                  <p className="text-sm text-secondary font-medium">Tech Innovations Inc.</p>
+                </div>
+                <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded mt-2 md:mt-0">
+                  2023 - Present
+                </span>
               </div>
-              <p className="text-sm mb-2 text-secondary">Tech Innovations Guild</p>
-              <p className="text-xs text-muted-foreground">
-                ⚡ Leading epic enterprise application raids<br />
-                🎯 Mentoring junior adventurers and code review<br />
-                🛠️ Implementing legendary CI/CD pipelines
-              </p>
+              <ul className="text-xs text-muted-foreground space-y-1">
+                <li>• Led development of enterprise applications serving 100k+ users</li>
+                <li>• Mentored junior developers and conducted code reviews</li>
+                <li>• Implemented CI/CD pipelines reducing deployment time by 60%</li>
+                <li>• Collaborated with cross-functional teams on product roadmap</li>
+              </ul>
             </div>
             
-            <div className="border-l-4 border-secondary pl-4 relative">
-              <div className="absolute -left-2 top-0 w-4 h-4 bg-secondary"></div>
-              <div className="text-accent text-pixel text-sm mb-2">
-                [2021-2023] ⚔️ FULL STACK WARRIOR
+            <div className="border-l-4 border-secondary pl-6 relative">
+              <div className="absolute -left-2 top-0 w-4 h-4 bg-secondary rounded-full"></div>
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                <div>
+                  <h3 className="text-accent text-pixel text-base font-bold mb-1">
+                    Full Stack Developer
+                  </h3>
+                  <p className="text-sm text-secondary font-medium">StartupTech Solutions</p>
+                </div>
+                <span className="text-xs text-muted-foreground bg-secondary/10 px-2 py-1 rounded mt-2 md:mt-0">
+                  2021 - 2023
+                </span>
               </div>
-              <p className="text-sm mb-2 text-secondary">StartupTech Arena</p>
-              <p className="text-xs text-muted-foreground">
-                🎮 Built scalable web applications from the ground up<br />
-                🎨 Collaborated with design mages on UX/UI implementation<br />
-                ⚡ Optimized performance stats and SEO rankings
-              </p>
+              <ul className="text-xs text-muted-foreground space-y-1">
+                <li>• Built scalable web applications from concept to production</li>
+                <li>• Collaborated with design team on UX/UI implementation</li>
+                <li>• Optimized application performance and SEO rankings</li>
+                <li>• Developed RESTful APIs and integrated third-party services</li>
+              </ul>
+            </div>
+
+            <div className="border-l-4 border-accent pl-6 relative">
+              <div className="absolute -left-2 top-0 w-4 h-4 bg-accent rounded-full"></div>
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                <div>
+                  <h3 className="text-accent text-pixel text-base font-bold mb-1">
+                    Frontend Developer
+                  </h3>
+                  <p className="text-sm text-secondary font-medium">Digital Agency Pro</p>
+                </div>
+                <span className="text-xs text-muted-foreground bg-accent/10 px-2 py-1 rounded mt-2 md:mt-0">
+                  2019 - 2021
+                </span>
+              </div>
+              <ul className="text-xs text-muted-foreground space-y-1">
+                <li>• Developed responsive websites using React and modern CSS</li>
+                <li>• Worked with clients to translate designs into interactive experiences</li>
+                <li>• Maintained and updated existing web applications</li>
+                <li>• Participated in agile development processes</li>
+              </ul>
             </div>
           </div>
         </PixelCard>
