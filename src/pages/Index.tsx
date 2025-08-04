@@ -11,9 +11,9 @@ const Index = () => {
   
   const titles = [
     "SOFTWARE ENGINEER",
-    "FRONTEND DEVELOPER", 
     "FULLSTACK DEVELOPER",
-    "WEB DEVELOPER"
+    "BACKEND DEVELOPER",
+    "FRONTEND DEVELOPER"
   ];
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const Index = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <div className="text-gamer text-sm text-muted-foreground">
-              ⚡ WELCOME TO MY PORTFOLIO ⚡
+            ✨ WELCOME TO MY PORTFOLIO ✨
             </div>
             
             <h1 className="text-pixel text-3xl md:text-4xl text-primary">
@@ -97,9 +97,9 @@ const Index = () => {
       <section className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "PROJECTS BUILT", value: "25+", icon: "💻" },
-            { label: "EXPERIENCE", value: "5Y", icon: "⭐" },
-            { label: "TECH STACK", value: "20+", icon: "🛠️" },
+            { label: "PROJECTS BUILT", value: "8+", icon: "💻" },
+            { label: "EXPERIENCE", value: "1Y", icon: "⭐" },
+            { label: "TECH STACK", value: "15+", icon: "🛠️" },
             { label: "COFFEE CONSUMED", value: "∞", icon: "☕" }
           ].map((stat) => (
             <PixelCard key={stat.label} className="text-center">

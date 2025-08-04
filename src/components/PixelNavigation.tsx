@@ -21,7 +21,7 @@ const PixelNavigation = () => {
           to="/" 
           className="text-pixel text-primary text-xl hover:text-accent transition-colors neon-glow"
         >
-          🎮 GAMER.DEV
+         TEJAS PANCHAL⚡
         </Link>
 
         {/* Desktop Navigation */}
