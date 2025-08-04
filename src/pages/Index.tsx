@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PixelNavigation from "@/components/PixelNavigation";
 import PixelCard from "@/components/PixelCard";
 import PixelButton from "@/components/PixelButton";
+import gamerHero from "@/assets/gamer-hero.png";
 
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
@@ -41,7 +42,7 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <div className="text-gamer text-sm text-muted-foreground">
               ⚡ WELCOME TO MY PORTFOLIO ⚡
@@ -62,7 +63,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-wrap gap-4">
               <Link to="/projects">
                 <PixelButton variant="primary" size="lg">
                   VIEW_PROJECTS
@@ -74,6 +75,14 @@ const Index = () => {
                 </PixelButton>
               </Link>
             </div>
+          </div>
+          
+          <div className="relative">
+            <img 
+              src={gamerHero} 
+              alt="Developer workspace"
+              className="w-full h-auto rounded-lg shadow-lg border border-border/20"
+            />
           </div>
         </div>
       </section>
