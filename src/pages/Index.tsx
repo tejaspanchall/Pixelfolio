@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import PixelNavigation from "@/components/PixelNavigation";
 import PixelCard from "@/components/PixelCard";
 import PixelButton from "@/components/PixelButton";
-import gamerHero from "@/assets/gamer-hero.png";
 
 const Index = () => {
   const [displayText, setDisplayText] = useState("");
@@ -42,7 +41,7 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="max-w-3xl mx-auto text-center">
           <div className="space-y-6">
             <div className="text-gamer text-sm text-muted-foreground">
               ⚡ WELCOME TO MY PORTFOLIO ⚡
@@ -63,7 +62,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center">
               <Link to="/projects">
                 <PixelButton variant="primary" size="lg">
                   VIEW_PROJECTS
@@ -74,20 +73,6 @@ const Index = () => {
                   CONTACT_ME
                 </PixelButton>
               </Link>
-            </div>
-          </div>
-          
-          <div className="relative">
-            <img 
-              src={gamerHero} 
-              alt="Developer workspace"
-              className="w-full h-auto border-2 border-primary"
-            />
-            <div className="absolute -bottom-2 -right-2 bg-primary text-black px-2 py-1">
-              <span className="text-pixel text-xs">💼 AVAILABLE</span>
-            </div>
-            <div className="absolute -top-2 -left-2 bg-accent text-black px-2 py-1">
-              <span className="text-pixel text-xs">5+ YRS</span>
             </div>
           </div>
         </div>
