@@ -3,26 +3,29 @@ import PixelCard from "@/components/PixelCard";
 import PixelButton from "@/components/PixelButton";
 
 const About = () => {
-  const skills = [
-    // Languages
-    { name: "JAVASCRIPT", level: 90, color: "bg-gaming-yellow" },
-    { name: "JAVA", level: 85, color: "bg-primary" },
-    { name: "PYTHON", level: 80, color: "bg-gaming-purple" },
-    { name: "SQL", level: 75, color: "bg-gaming-green" },
-    { name: "PHP", level: 70, color: "bg-accent" },
-    { name: "HTML/CSS", level: 95, color: "bg-secondary" },
-    // Frameworks
-    { name: "REACT", level: 90, color: "bg-accent" },
-    { name: "NODE.JS", level: 85, color: "bg-gaming-green" },
-    { name: "SPRING BOOT", level: 75, color: "bg-primary" },
-    { name: "LARAVEL", level: 70, color: "bg-gaming-purple" },
-    // Developer Tools
-    { name: "GIT/GITHUB", level: 90, color: "bg-gaming-yellow" },
-    { name: "VS CODE", level: 95, color: "bg-secondary" },
-    { name: "INTELLIJ IDEA", level: 80, color: "bg-primary" },
-    { name: "POSTMAN", level: 85, color: "bg-accent" },
-    { name: "VERCEL", level: 75, color: "bg-gaming-green" },
-  ];
+  const skillCategories = {
+    "LANGUAGES": [
+      { name: "JavaScript", level: 90, color: "bg-gaming-yellow" },
+      { name: "Java", level: 85, color: "bg-primary" },
+      { name: "Python", level: 80, color: "bg-gaming-purple" },
+      { name: "SQL", level: 75, color: "bg-gaming-green" },
+      { name: "PHP", level: 70, color: "bg-accent" },
+      { name: "HTML/CSS", level: 95, color: "bg-secondary" },
+    ],
+    "FRAMEWORKS": [
+      { name: "React", level: 90, color: "bg-accent" },
+      { name: "Node.js", level: 85, color: "bg-gaming-green" },
+      { name: "Spring Boot", level: 75, color: "bg-primary" },
+      { name: "Laravel", level: 70, color: "bg-gaming-purple" },
+    ],
+    "TOOLS": [
+      { name: "Git/GitHub", level: 90, color: "bg-gaming-yellow" },
+      { name: "VS Code", level: 95, color: "bg-secondary" },
+      { name: "IntelliJ IDEA", level: 80, color: "bg-primary" },
+      { name: "Postman", level: 85, color: "bg-accent" },
+      { name: "Vercel", level: 75, color: "bg-gaming-green" },
+    ],
+  };
 
   return (
     <div className="min-h-screen bg-background relative game-scanlines">
@@ -33,27 +36,40 @@ const About = () => {
           {/* Skill Tree */}
           <PixelCard>
             <h2 className="text-pixel text-xl text-secondary mb-6 neon-glow">⚔️ SKILL TREE</h2>
-            <div className="space-y-4">
-              {skills.map((skill, index) => (
-                <div key={skill.name} className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-pixel text-xs text-primary">
-                      {skill.name}
-                    </span>
-                    <span className="text-pixel text-xs text-muted-foreground">
-                      {skill.level}%
-                    </span>
-                  </div>
-                  <div className="health-bar">
-                    <div
-                      className={`h-full ${skill.color} transition-all duration-1000 ease-out relative`}
-                      style={{ 
-                        width: `${skill.level}%`,
-                        animationDelay: `${index * 200}ms`
-                      }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20"></div>
-                    </div>
+            <div className="space-y-6">
+              {Object.entries(skillCategories).map(([category, skills]) => (
+                <div key={category} className="space-y-3">
+                  <h3 className="text-pixel text-sm text-accent font-bold border-b border-accent/20 pb-1">
+                    {category}
+                  </h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    {skills.map((skill) => (
+                      <div 
+                        key={skill.name} 
+                        className="bg-card/50 border border-primary/20 rounded-lg p-3 text-center hover:bg-card/70 transition-all"
+                      >
+                        <div className="text-pixel text-xs text-primary font-medium mb-1">
+                          {skill.name}
+                        </div>
+                        <div className="flex items-center justify-center gap-1">
+                          <div className="flex gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <div
+                                key={i}
+                                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                  i < Math.floor(skill.level / 20) 
+                                    ? skill.color.replace('bg-', 'bg-') 
+                                    : 'bg-muted/30'
+                                }`}
+                              />
+                            ))}
+                          </div>
+                          <span className="text-xs text-muted-foreground ml-2">
+                            {skill.level}%
+                          </span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               ))}
