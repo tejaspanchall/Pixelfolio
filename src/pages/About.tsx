@@ -4,12 +4,24 @@ import PixelButton from "@/components/PixelButton";
 
 const About = () => {
   const skills = [
-    { name: "JAVASCRIPT", level: 95, color: "bg-gaming-yellow" },
+    // Languages
+    { name: "JAVASCRIPT", level: 90, color: "bg-gaming-yellow" },
+    { name: "JAVA", level: 85, color: "bg-primary" },
+    { name: "PYTHON", level: 80, color: "bg-gaming-purple" },
+    { name: "SQL", level: 75, color: "bg-gaming-green" },
+    { name: "PHP", level: 70, color: "bg-accent" },
+    { name: "HTML/CSS", level: 95, color: "bg-secondary" },
+    // Frameworks
     { name: "REACT", level: 90, color: "bg-accent" },
-    { name: "TYPESCRIPT", level: 85, color: "bg-primary" },
-    { name: "NODE.JS", level: 80, color: "bg-gaming-green" },
-    { name: "PYTHON", level: 75, color: "bg-gaming-purple" },
-    { name: "DATABASE", level: 70, color: "bg-secondary" },
+    { name: "NODE.JS", level: 85, color: "bg-gaming-green" },
+    { name: "SPRING BOOT", level: 75, color: "bg-primary" },
+    { name: "LARAVEL", level: 70, color: "bg-gaming-purple" },
+    // Developer Tools
+    { name: "GIT/GITHUB", level: 90, color: "bg-gaming-yellow" },
+    { name: "VS CODE", level: 95, color: "bg-secondary" },
+    { name: "INTELLIJ IDEA", level: 80, color: "bg-primary" },
+    { name: "POSTMAN", level: 85, color: "bg-accent" },
+    { name: "VERCEL", level: 75, color: "bg-gaming-green" },
   ];
 
   return (
