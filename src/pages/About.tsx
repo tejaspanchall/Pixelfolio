@@ -1,8 +1,11 @@
+import { useState } from "react";
 import PixelNavigation from "@/components/PixelNavigation";
 import PixelCard from "@/components/PixelCard";
 import PixelButton from "@/components/PixelButton";
 
 const About = () => {
+  const [showCertifications, setShowCertifications] = useState(false);
+  
   const skills = [
     { name: "JAVASCRIPT", level: 95, color: "bg-gaming-yellow" },
     { name: "REACT", level: 90, color: "bg-accent" },
@@ -17,35 +20,7 @@ const About = () => {
       <PixelNavigation />
       
       <div className="container mx-auto px-4 py-8">
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Player Profile */}
-          <PixelCard>
-            <h2 className="text-pixel text-xl text-accent mb-6 neon-glow">🎮 PLAYER PROFILE</h2>
-            <div className="space-y-4 text-gamer">
-              <p className="text-sm leading-relaxed">
-                ⚡ SPAWNING DEVELOPER INSTANCE...
-              </p>
-              <p className="text-sm leading-relaxed">
-                Greetings, fellow gamers! I'm a passionate software developer who transforms 
-                creative ideas into epic digital adventures. With mastery in modern web 
-                technologies and a quest for clean, efficient code.
-              </p>
-              <p className="text-sm leading-relaxed">
-                🏆 SPECIALIZATION: Full-stack development, React ecosystems, 
-                and creating legendary user experiences.
-              </p>
-              <p className="text-sm leading-relaxed">
-                When not grinding code, you'll find me exploring new tech dungeons, 
-                contributing to open source guilds, or speed-running classic games for inspiration.
-              </p>
-              <div className="mt-6">
-                <PixelButton variant="accent">
-                  📄 DOWNLOAD RESUME
-                </PixelButton>
-              </div>
-            </div>
-          </PixelCard>
-
+        <div className="grid md:grid-cols-1 gap-8">
           {/* Skill Tree */}
           <PixelCard>
             <h2 className="text-pixel text-xl text-secondary mb-6 neon-glow">⚔️ SKILL TREE</h2>
@@ -148,8 +123,18 @@ const About = () => {
 
         {/* Certifications & Achievements */}
         <PixelCard className="mt-8">
-          <h2 className="text-pixel text-xl text-accent mb-6 neon-glow">🏅 CERTIFICATIONS & ACHIEVEMENTS</h2>
-          <div className="grid md:grid-cols-2 gap-6 text-gamer">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-pixel text-xl text-accent neon-glow">🏅 CERTIFICATIONS & ACHIEVEMENTS</h2>
+            <PixelButton 
+              variant="accent" 
+              size="sm"
+              onClick={() => setShowCertifications(!showCertifications)}
+            >
+              {showCertifications ? "HIDE" : "VIEW"}
+            </PixelButton>
+          </div>
+          {showCertifications && (
+            <div className="grid md:grid-cols-2 gap-6 text-gamer">
             <div className="space-y-4">
               <div className="bg-primary/10 p-4 rounded border border-primary/20">
                 <div className="flex items-center gap-3 mb-2">
@@ -219,7 +204,8 @@ const About = () => {
                 <p className="text-xs text-primary">2021 - 2024</p>
               </div>
             </div>
-          </div>
+            </div>
+          )}
         </PixelCard>
       </div>
     </div>

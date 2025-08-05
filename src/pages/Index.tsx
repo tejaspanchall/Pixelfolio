@@ -64,13 +64,11 @@ const Index = () => {
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <Link to="/projects">
-                <PixelButton variant="primary" size="lg">
-                  VIEW_PROJECTS
-                </PixelButton>
-              </Link>
+              <PixelButton variant="accent" size="lg">
+                📄 DOWNLOAD RESUME
+              </PixelButton>
               <Link to="/contact">
-                <PixelButton variant="accent" size="lg">
+                <PixelButton variant="primary" size="lg">
                   CONTACT_ME
                 </PixelButton>
               </Link>
@@ -109,66 +107,29 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Projects */}
+      {/* Player Profile */}
       <section className="container mx-auto px-4 py-8">
-        <h2 className="text-pixel text-2xl text-accent mb-8 text-center">
-          🏆 FEATURED PROJECTS
-        </h2>
-        
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            {
-              title: "E-COMMERCE PLATFORM",
-              tech: ["REACT", "NODE.JS"],
-              status: "COMPLETED",
-              complexity: "⭐⭐⭐"
-            },
-            {
-              title: "TASK MANAGEMENT APP",
-              tech: ["TYPESCRIPT", "SUPABASE"],
-              status: "IN PROGRESS",
-              complexity: "⭐⭐⭐⭐"
-            },
-            {
-              title: "AI CHATBOT",
-              tech: ["PYTHON", "ML"],
-              status: "BETA",
-              complexity: "⭐⭐⭐⭐⭐"
-            }
-          ].map((project, index) => (
-            <PixelCard key={project.title}>
-              <h3 className="text-pixel text-sm text-primary mb-3">
-                {project.title}
-              </h3>
-              <div className="flex gap-2 mb-3">
-                {project.tech.map((tech) => (
-                  <span 
-                    key={tech}
-                    className="text-xs bg-muted text-muted-foreground px-2 py-1 border border-primary"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-pixel text-xs text-accent">
-                  [{project.status}]
-                </span>
-                <PixelButton size="sm" variant="secondary">
-                  VIEW
-                </PixelButton>
-              </div>
-            </PixelCard>
-          ))}
-        </div>
-        
-        <div className="text-center mt-8">
-          <Link to="/projects">
-            <PixelButton variant="primary">
-              VIEW_ALL_PROJECTS
-            </PixelButton>
-          </Link>
-        </div>
+        <PixelCard>
+          <h2 className="text-pixel text-xl text-accent mb-6 neon-glow">🎮 PLAYER PROFILE</h2>
+          <div className="space-y-4 text-gamer">
+            <p className="text-sm leading-relaxed">
+              ⚡ SPAWNING DEVELOPER INSTANCE...
+            </p>
+            <p className="text-sm leading-relaxed">
+              Greetings, fellow gamers! I'm a passionate software developer who transforms 
+              creative ideas into epic digital adventures. With mastery in modern web 
+              technologies and a quest for clean, efficient code.
+            </p>
+            <p className="text-sm leading-relaxed">
+              🏆 SPECIALIZATION: Full-stack development, React ecosystems, 
+              and creating legendary user experiences.
+            </p>
+            <p className="text-sm leading-relaxed">
+              When not grinding code, you'll find me exploring new tech dungeons, 
+              contributing to open source guilds, or speed-running classic games for inspiration.
+            </p>
+          </div>
+        </PixelCard>
       </section>
     </div>
   );
