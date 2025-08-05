@@ -5,7 +5,7 @@ import PixelButton from "@/components/PixelButton";
 const Projects = () => {
   const projects = [
     {
-      title: "E-COMMERCE.APP",
+      title: "JUSTANIME",
       tech: ["REACT", "NODE.JS", "MONGODB"],
       description: "Full-stack e-commerce platform with real-time inventory management and payment processing.",
       status: "DEPLOYED",

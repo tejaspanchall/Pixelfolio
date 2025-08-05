@@ -86,12 +86,12 @@ const About = () => {
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                 <div>
                   <h3 className="text-accent text-pixel text-base font-bold mb-1">
-                    Senior Software Engineer
+                    Software Engineer Intern
                   </h3>
-                  <p className="text-sm text-secondary font-medium">Tech Innovations Inc.</p>
+                  <p className="text-sm text-secondary font-medium">DMI Systems Pvt. Ltd.</p>
                 </div>
                 <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded mt-2 md:mt-0">
-                  2023 - Present
+                  2025 - Present
                 </span>
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">
@@ -107,12 +107,11 @@ const About = () => {
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                 <div>
                   <h3 className="text-accent text-pixel text-base font-bold mb-1">
-                    Full Stack Developer
+                    Freelance Web Developer
                   </h3>
-                  <p className="text-sm text-secondary font-medium">StartupTech Solutions</p>
                 </div>
                 <span className="text-xs text-muted-foreground bg-secondary/10 px-2 py-1 rounded mt-2 md:mt-0">
-                  2021 - 2023
+                  2024 - Present
                 </span>
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">
@@ -128,12 +127,12 @@ const About = () => {
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                 <div>
                   <h3 className="text-accent text-pixel text-base font-bold mb-1">
-                    Frontend Developer
+                    Founder & Project Developer
                   </h3>
-                  <p className="text-sm text-secondary font-medium">Digital Agency Pro</p>
+                  <p className="text-sm text-secondary font-medium">beingotaku</p>
                 </div>
                 <span className="text-xs text-muted-foreground bg-accent/10 px-2 py-1 rounded mt-2 md:mt-0">
-                  2019 - 2021
+                  2022 - 2023
                 </span>
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">
