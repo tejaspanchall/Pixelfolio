@@ -1,11 +1,8 @@
-import { useState } from "react";
 import PixelNavigation from "@/components/PixelNavigation";
 import PixelCard from "@/components/PixelCard";
 import PixelButton from "@/components/PixelButton";
 
 const About = () => {
-  const [showCertifications, setShowCertifications] = useState(false);
-  
   const skills = [
     { name: "JAVASCRIPT", level: 95, color: "bg-gaming-yellow" },
     { name: "REACT", level: 90, color: "bg-accent" },
@@ -20,7 +17,7 @@ const About = () => {
       <PixelNavigation />
       
       <div className="container mx-auto px-4 py-8">
-        <div className="grid md:grid-cols-1 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Skill Tree */}
           <PixelCard>
             <h2 className="text-pixel text-xl text-secondary mb-6 neon-glow">⚔️ SKILL TREE</h2>
@@ -48,6 +45,54 @@ const About = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </PixelCard>
+
+          {/* Certifications & Achievements */}
+          <PixelCard>
+            <h2 className="text-pixel text-xl text-accent mb-6 neon-glow">🏅 CERTIFICATIONS & ACHIEVEMENTS</h2>
+            <div className="space-y-4 text-gamer">
+              <div className="bg-primary/10 p-4 rounded border border-primary/20">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-primary rounded-full"></div>
+                    <h3 className="text-pixel text-sm text-primary font-bold">
+                      AWS Certified Solutions Architect
+                    </h3>
+                  </div>
+                  <PixelButton size="sm" variant="primary">VIEW</PixelButton>
+                </div>
+                <p className="text-xs text-muted-foreground mb-1">Amazon Web Services</p>
+                <p className="text-xs text-secondary">2024 - 2027</p>
+              </div>
+
+              <div className="bg-secondary/10 p-4 rounded border border-secondary/20">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-secondary rounded-full"></div>
+                    <h3 className="text-pixel text-sm text-secondary font-bold">
+                      Google Cloud Professional Developer
+                    </h3>
+                  </div>
+                  <PixelButton size="sm" variant="secondary">VIEW</PixelButton>
+                </div>
+                <p className="text-xs text-muted-foreground mb-1">Google Cloud Platform</p>
+                <p className="text-xs text-accent">2023 - 2025</p>
+              </div>
+
+              <div className="bg-accent/10 p-4 rounded border border-accent/20">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-accent rounded-full"></div>
+                    <h3 className="text-pixel text-sm text-accent font-bold">
+                      MongoDB Certified Developer
+                    </h3>
+                  </div>
+                  <PixelButton size="sm" variant="accent">VIEW</PixelButton>
+                </div>
+                <p className="text-xs text-muted-foreground mb-1">MongoDB University</p>
+                <p className="text-xs text-primary">2023 - 2026</p>
+              </div>
             </div>
           </PixelCard>
         </div>
@@ -119,93 +164,6 @@ const About = () => {
               </ul>
             </div>
           </div>
-        </PixelCard>
-
-        {/* Certifications & Achievements */}
-        <PixelCard className="mt-8">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-pixel text-xl text-accent neon-glow">🏅 CERTIFICATIONS & ACHIEVEMENTS</h2>
-            <PixelButton 
-              variant="accent" 
-              size="sm"
-              onClick={() => setShowCertifications(!showCertifications)}
-            >
-              {showCertifications ? "HIDE" : "VIEW"}
-            </PixelButton>
-          </div>
-          {showCertifications && (
-            <div className="grid md:grid-cols-2 gap-6 text-gamer">
-            <div className="space-y-4">
-              <div className="bg-primary/10 p-4 rounded border border-primary/20">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-3 h-3 bg-primary rounded-full"></div>
-                  <h3 className="text-pixel text-sm text-primary font-bold">
-                    AWS Certified Solutions Architect
-                  </h3>
-                </div>
-                <p className="text-xs text-muted-foreground mb-1">Amazon Web Services</p>
-                <p className="text-xs text-secondary">2024 - 2027</p>
-              </div>
-
-              <div className="bg-secondary/10 p-4 rounded border border-secondary/20">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-3 h-3 bg-secondary rounded-full"></div>
-                  <h3 className="text-pixel text-sm text-secondary font-bold">
-                    Google Cloud Professional Developer
-                  </h3>
-                </div>
-                <p className="text-xs text-muted-foreground mb-1">Google Cloud Platform</p>
-                <p className="text-xs text-accent">2023 - 2025</p>
-              </div>
-
-              <div className="bg-accent/10 p-4 rounded border border-accent/20">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-3 h-3 bg-accent rounded-full"></div>
-                  <h3 className="text-pixel text-sm text-accent font-bold">
-                    MongoDB Certified Developer
-                  </h3>
-                </div>
-                <p className="text-xs text-muted-foreground mb-1">MongoDB University</p>
-                <p className="text-xs text-primary">2023 - 2026</p>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="bg-gaming-green/10 p-4 rounded border border-gaming-green/20">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-3 h-3 bg-gaming-green rounded-full"></div>
-                  <h3 className="text-pixel text-sm text-gaming-green font-bold">
-                    React Certified Developer
-                  </h3>
-                </div>
-                <p className="text-xs text-muted-foreground mb-1">Meta Blueprint</p>
-                <p className="text-xs text-secondary">2022 - 2025</p>
-              </div>
-
-              <div className="bg-gaming-purple/10 p-4 rounded border border-gaming-purple/20">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-3 h-3 bg-gaming-purple rounded-full"></div>
-                  <h3 className="text-pixel text-sm text-gaming-purple font-bold">
-                    Docker Certified Associate
-                  </h3>
-                </div>
-                <p className="text-xs text-muted-foreground mb-1">Docker Inc.</p>
-                <p className="text-xs text-accent">2022 - 2025</p>
-              </div>
-
-              <div className="bg-gaming-yellow/10 p-4 rounded border border-gaming-yellow/20">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-3 h-3 bg-gaming-yellow rounded-full"></div>
-                  <h3 className="text-pixel text-sm text-gaming-yellow font-bold">
-                    Kubernetes Administrator
-                  </h3>
-                </div>
-                <p className="text-xs text-muted-foreground mb-1">Cloud Native Computing Foundation</p>
-                <p className="text-xs text-primary">2021 - 2024</p>
-              </div>
-            </div>
-            </div>
-          )}
         </PixelCard>
       </div>
     </div>
