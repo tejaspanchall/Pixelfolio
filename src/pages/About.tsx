@@ -18,34 +18,6 @@ const About = () => {
       
       <div className="container mx-auto px-4 py-8">
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Player Profile */}
-          <PixelCard>
-            <h2 className="text-pixel text-xl text-accent mb-6 neon-glow">🎮 PLAYER PROFILE</h2>
-            <div className="space-y-4 text-gamer">
-              <p className="text-sm leading-relaxed">
-                ⚡ SPAWNING DEVELOPER INSTANCE...
-              </p>
-              <p className="text-sm leading-relaxed">
-                Greetings, fellow gamers! I'm a passionate software developer who transforms 
-                creative ideas into epic digital adventures. With mastery in modern web 
-                technologies and a quest for clean, efficient code.
-              </p>
-              <p className="text-sm leading-relaxed">
-                🏆 SPECIALIZATION: Full-stack development, React ecosystems, 
-                and creating legendary user experiences.
-              </p>
-              <p className="text-sm leading-relaxed">
-                When not grinding code, you'll find me exploring new tech dungeons, 
-                contributing to open source guilds, or speed-running classic games for inspiration.
-              </p>
-              <div className="mt-6">
-                <PixelButton variant="accent">
-                  📄 DOWNLOAD RESUME
-                </PixelButton>
-              </div>
-            </div>
-          </PixelCard>
-
           {/* Skill Tree */}
           <PixelCard>
             <h2 className="text-pixel text-xl text-secondary mb-6 neon-glow">⚔️ SKILL TREE</h2>
@@ -73,6 +45,54 @@ const About = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </PixelCard>
+
+          {/* Certifications & Achievements */}
+          <PixelCard>
+            <h2 className="text-pixel text-xl text-accent mb-6 neon-glow">🏅 CERTIFICATIONS & ACHIEVEMENTS</h2>
+            <div className="space-y-4 text-gamer">
+              <div className="bg-primary/10 p-4 rounded border border-primary/20">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-primary rounded-full"></div>
+                    <h3 className="text-pixel text-sm text-primary font-bold">
+                      AWS Certified Solutions Architect
+                    </h3>
+                  </div>
+                  <PixelButton size="sm" variant="primary">VIEW</PixelButton>
+                </div>
+                <p className="text-xs text-muted-foreground mb-1">Amazon Web Services</p>
+                <p className="text-xs text-secondary">2024 - 2027</p>
+              </div>
+
+              <div className="bg-secondary/10 p-4 rounded border border-secondary/20">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-secondary rounded-full"></div>
+                    <h3 className="text-pixel text-sm text-secondary font-bold">
+                      Google Cloud Professional Developer
+                    </h3>
+                  </div>
+                  <PixelButton size="sm" variant="secondary">VIEW</PixelButton>
+                </div>
+                <p className="text-xs text-muted-foreground mb-1">Google Cloud Platform</p>
+                <p className="text-xs text-accent">2023 - 2025</p>
+              </div>
+
+              <div className="bg-accent/10 p-4 rounded border border-accent/20">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-accent rounded-full"></div>
+                    <h3 className="text-pixel text-sm text-accent font-bold">
+                      MongoDB Certified Developer
+                    </h3>
+                  </div>
+                  <PixelButton size="sm" variant="accent">VIEW</PixelButton>
+                </div>
+                <p className="text-xs text-muted-foreground mb-1">MongoDB University</p>
+                <p className="text-xs text-primary">2023 - 2026</p>
+              </div>
             </div>
           </PixelCard>
         </div>
