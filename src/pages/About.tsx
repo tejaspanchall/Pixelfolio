@@ -57,13 +57,15 @@ const About = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-primary rounded-full"></div>
                     <h3 className="text-pixel text-sm text-primary font-bold">
-                      AWS Certified Solutions Architect
+                      Blockchain Basics
                     </h3>
                   </div>
-                  <PixelButton size="sm" variant="primary">VIEW</PixelButton>
+                  <a href="https://www.coursera.org/account/accomplishments/certificate/99QZX4WR57KF" target="_blank" rel="noopener noreferrer">
+                    <PixelButton size="sm" variant="primary">VIEW</PixelButton>
+                  </a>
                 </div>
-                <p className="text-xs text-muted-foreground mb-1">Amazon Web Services</p>
-                <p className="text-xs text-secondary">2024 - 2027</p>
+                <p className="text-xs text-muted-foreground mb-1">Coursera</p>
+                <p className="text-xs text-secondary">May 2023</p>
               </div>
 
               <div className="bg-secondary/10 p-4 rounded border border-secondary/20">
@@ -71,15 +73,17 @@ const About = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-secondary rounded-full"></div>
                     <h3 className="text-pixel text-sm text-secondary font-bold">
-                      Google Cloud Professional Developer
+                      Responsive Web Design
                     </h3>
                   </div>
-                  <PixelButton size="sm" variant="secondary">VIEW</PixelButton>
+                  <a href="https://www.freecodecamp.org/certification/tejaspanchal/responsive-web-design" target="_blank" rel="noopener noreferrer">
+                    <PixelButton size="sm" variant="secondary">VIEW</PixelButton>
+                  </a>
                 </div>
-                <p className="text-xs text-muted-foreground mb-1">Google Cloud Platform</p>
-                <p className="text-xs text-accent">2023 - 2025</p>
+                <p className="text-xs text-muted-foreground mb-1">freeCodeCamp</p>
+                <p className="text-xs text-accent">Dec 2021</p>
               </div>
-
+{/* 
               <div className="bg-accent/10 p-4 rounded border border-accent/20">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-3">
@@ -92,7 +96,7 @@ const About = () => {
                 </div>
                 <p className="text-xs text-muted-foreground mb-1">MongoDB University</p>
                 <p className="text-xs text-primary">2023 - 2026</p>
-              </div>
+              </div> */}
             </div>
           </PixelCard>
         </div>
@@ -115,10 +119,9 @@ const About = () => {
                 </span>
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">
-                <li>• Led development of enterprise applications serving 100k+ users</li>
-                <li>• Mentored junior developers and conducted code reviews</li>
-                <li>• Implemented CI/CD pipelines reducing deployment time by 60%</li>
-                <li>• Collaborated with cross-functional teams on product roadmap</li>
+                <li>• Refactored a legacy online bookstore using React.js and Laravel, reducing page load times by 40%</li>
+                <li>• Developed and tested RESTful APIs for authentication, product, and order management, reducing integration bugs by 60%</li>
+                <li>• Optimized backend data exchange between React frontend and Laravel APIs using Postman, improving system reliability and response time</li>
               </ul>
             </div>
             
@@ -135,10 +138,9 @@ const About = () => {
                 </span>
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">
-                <li>• Built scalable web applications from concept to production</li>
-                <li>• Collaborated with design team on UX/UI implementation</li>
-                <li>• Optimized application performance and SEO rankings</li>
-                <li>• Developed RESTful APIs and integrated third-party services</li>
+                <li>• Building a reward-based platform with wallet tracking and Razorpay integration for seamless withdrawals</li>
+                <li>• Designed and deployed a mobile-friendly gym website featuring class schedules, trainer profiles, and lead capture forms</li>
+                <li>• Created a service-oriented website for a writing agency with dynamic content, inquiry forms, and SEO</li>
               </ul>
             </div>
 
@@ -156,10 +158,9 @@ const About = () => {
                 </span>
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">
-                <li>• Developed responsive websites using React and modern CSS</li>
-                <li>• Worked with clients to translate designs into interactive experiences</li>
-                <li>• Maintained and updated existing web applications</li>
-                <li>• Participated in agile development processes</li>
+                <li>• Developed a full-stack e-commerce site for anime merchandise, increasing engagement by 30%</li>
+                <li>• Applied advanced SEO strategies, leading to a 50% growth in organic traffic in 6 months</li>
+                <li>• Managed end-to-end fulfillment for 200+ orders with 98% customer satisfaction</li>
               </ul>
             </div>
           </div>
