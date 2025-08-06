@@ -20,11 +20,11 @@ const About = () => {
       { name: "Laravel", level: 70, color: "bg-gaming-purple" },
     ],
     "TOOLS": [
-      { name: "Git/GitHub", level: 90, color: "bg-gaming-yellow" },
-      { name: "VS Code", level: 95, color: "bg-secondary" },
-      { name: "IntelliJ IDEA", level: 80, color: "bg-primary" },
-      { name: "Postman", level: 85, color: "bg-accent" },
-      { name: "Vercel", level: 75, color: "bg-gaming-green" },
+      { name: "Vercel", level: 100, color: "bg-gaming-yellow" },
+      { name: "Git/GitHub", level: 90, color: "bg-secondary" },
+      { name: "Postman", level: 90, color: "bg-primary" },
+      { name: "VS Code", level: 85, color: "bg-accent" },
+      { name: "IntelliJ IDEA", level: 70, color: "bg-gaming-green" },
     ],
   };
 
