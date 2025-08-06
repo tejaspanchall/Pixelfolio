@@ -48,15 +48,6 @@ const Projects = () => {
       color: "text-pixel-purple",
       codeUrl: "https://github.com/tejaspanchall/BookCafe-Frontend",
       demoUrl: "https://bookcafe-frontend.vercel.app/"
-    },
-    {
-      title: "GAME.ENGINE",
-      tech: ["C++", "OPENGL", "SDL2"],
-      description: "2D game engine with physics simulation and sprite animation system.",
-      status: "ARCHIVED",
-      color: "text-pixel-pink",
-      codeUrl: "https://github.com/username/game-engine",
-      demoUrl: "https://game-engine-demo.vercel.app"
     }
   ];
 
