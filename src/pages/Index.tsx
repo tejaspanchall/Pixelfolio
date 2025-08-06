@@ -37,7 +37,7 @@ const Index = () => {
   }, [currentTitleIndex]);
 
   return (
-    <div className="min-h-screen bg-background relative game-scanlines">
+    <div className="min-h-screen bg-background relative game-scanlines pt-16">
       <PixelNavigation />
       
       {/* Hero Section */}

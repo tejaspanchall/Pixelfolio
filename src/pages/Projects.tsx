@@ -67,7 +67,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background relative game-scanlines">
+    <div className="min-h-screen bg-background game-scanlines pt-16">
       <PixelNavigation />
       
       <div className="container mx-auto px-4 py-12">

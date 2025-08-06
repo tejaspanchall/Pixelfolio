@@ -79,7 +79,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background relative game-scanlines">
+    <div className="min-h-screen bg-background game-scanlines pt-16">
       <PixelNavigation />
       
       <div className="container mx-auto px-4 py-8">
@@ -213,16 +213,11 @@ const Contact = () => {
                   <span className="text-muted-foreground">RESPONSE_TIME:</span>
                   <span className="text-accent">&lt; 24H</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">AVAILABILITY:</span>
-                  <span className="text-secondary">MON-FRI 9AM-6PM EST</span>
-                </div>
               </div>
               
               <div className="mt-4 p-3 bg-muted border border-primary">
                 <p className="text-terminal text-xs text-foreground">
-                  &gt; CURRENTLY_ACCEPTING: Freelance projects, collaboration 
-                  opportunities, and interesting challenges. Let's build something amazing!
+                  &gt; CURRENTLY_ACCEPTING: Job Opportunities, freelance projects, collaborations, and interesting challenges. Let's build something amazing!
                 </p>
               </div>
             </PixelCard>
