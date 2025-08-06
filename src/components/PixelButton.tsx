@@ -7,10 +7,11 @@ interface PixelButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "sm" | "md" | "lg";
   href?: string;
   external?: boolean;
+  download?: boolean | string;
 }
 
 const PixelButton = forwardRef<HTMLButtonElement, PixelButtonProps>(
-  ({ className, variant = "primary", size = "md", href, external, ...props }, ref) => {
+  ({ className, variant = "primary", size = "md", href, external, download, ...props }, ref) => {
     const baseClasses = "btn-game";
     
     const variantClasses = {
@@ -42,6 +43,7 @@ const PixelButton = forwardRef<HTMLButtonElement, PixelButtonProps>(
             className={classes}
             target="_blank"
             rel="noopener noreferrer"
+            download={download}
             {...props as any}
           >
             {props.children}

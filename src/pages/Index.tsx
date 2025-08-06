@@ -64,7 +64,13 @@ const Index = () => {
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <PixelButton variant="accent" size="lg">
+              <PixelButton 
+                variant="accent" 
+                size="lg" 
+                href="/Tejas Panchal Resume.pdf" 
+                external
+                download="Tejas Panchal Resume.pdf"
+              >
                 📄 DOWNLOAD RESUME
               </PixelButton>
               <Link to="/contact">
