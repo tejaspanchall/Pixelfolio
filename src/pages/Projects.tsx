@@ -135,57 +135,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Featured Project */}
-        <PixelCard className="mt-8">
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-pixel text-lg text-primary mb-3">REALTIME_COLLABORATION.SUITE</h3>
-              <p className="text-terminal text-sm leading-relaxed mb-4">
-                A comprehensive collaboration platform built with modern web technologies. 
-                Features include real-time document editing, video conferencing, project 
-                management, and team communication tools.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["REACT", "TYPESCRIPT", "WEBSOCKETS", "WEBRTC", "REDIS", "POSTGRESQL"].map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs bg-accent text-accent-foreground px-2 py-1"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex gap-5">
-                <PixelButton 
-                  variant="primary"
-                  className="w-32 text-center"
-                  href="https://github.com/username/realtime-collab"
-                  external
-                >
-                  VIEW_PROJECT
-                </PixelButton>
-                <PixelButton 
-                  variant="secondary"
-                  className="w-32 text-center"
-                  href="https://blog.example.com/realtime-collab-case-study"
-                  external
-                >
-                  READ_CASE_STUDY
-                </PixelButton>
-              </div>
-            </div>
-            <div className="bg-muted p-4 border border-primary">
-              <div className="text-terminal text-xs space-y-1">
-                <div className="text-primary">&gt; PROJECT_STATS.JSON</div>
-                <div className="text-muted-foreground">├── users: 10,000+</div>
-                <div className="text-muted-foreground">├── uptime: 99.9%</div>
-                <div className="text-muted-foreground">├── performance: A+</div>
-                <div className="text-muted-foreground">└── security: SSL/A+</div>
-              </div>
-            </div>
-          </div>
-        </PixelCard>
       </div>
     </div>
   );
