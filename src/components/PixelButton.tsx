@@ -1,13 +1,16 @@
 import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes, forwardRef } from "react";
+import { Link } from "react-router-dom";
 
 interface PixelButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "accent";
   size?: "sm" | "md" | "lg";
+  href?: string;
+  external?: boolean;
 }
 
 const PixelButton = forwardRef<HTMLButtonElement, PixelButtonProps>(
-  ({ className, variant = "primary", size = "md", ...props }, ref) => {
+  ({ className, variant = "primary", size = "md", href, external, ...props }, ref) => {
     const baseClasses = "btn-game";
     
     const variantClasses = {
@@ -22,14 +25,46 @@ const PixelButton = forwardRef<HTMLButtonElement, PixelButtonProps>(
       lg: "px-6 py-3 text-base",
     };
 
+    const classes = cn(
+      baseClasses,
+      variantClasses[variant],
+      sizeClasses[size],
+      className
+    );
+
+    // If href is provided, render as a link
+    if (href) {
+      // For external links
+      if (external) {
+        return (
+          <a 
+            href={href}
+            className={classes}
+            target="_blank"
+            rel="noopener noreferrer"
+            {...props as any}
+          >
+            {props.children}
+          </a>
+        );
+      }
+      
+      // For internal links (React Router)
+      return (
+        <Link
+          to={href}
+          className={classes}
+          {...props as any}
+        >
+          {props.children}
+        </Link>
+      );
+    }
+
+    // Default button
     return (
       <button
-        className={cn(
-          baseClasses,
-          variantClasses[variant],
-          sizeClasses[size],
-          className
-        )}
+        className={classes}
         ref={ref}
         {...props}
       />

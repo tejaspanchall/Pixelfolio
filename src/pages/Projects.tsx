@@ -6,45 +6,57 @@ const Projects = () => {
   const projects = [
     {
       title: "JUSTANIME",
-      tech: ["REACT", "NODE.JS", "MONGODB"],
-      description: "Full-stack e-commerce platform with real-time inventory management and payment processing.",
-      status: "DEPLOYED",
-      color: "text-primary"
-    },
-    {
-      title: "TASK_MANAGER.SYS",
-      tech: ["TYPESCRIPT", "REACT", "SUPABASE"],
-      description: "Collaborative project management tool with real-time updates and team collaboration features.",
+      tech: ["REACT", "NODE.JS"],
+      description: "Clean & ad-free anime streaming website, offering a smooth viewing experience.",
       status: "IN_PROGRESS",
-      color: "text-secondary"
+      color: "text-primary",
+      codeUrl: "https://github.com/tejaspanchall/justanime",
+      demoUrl: "https://justanime.vercel.app"
     },
     {
-      title: "WEATHER.API",
-      tech: ["PYTHON", "FASTAPI", "DOCKER"],
-      description: "RESTful API service providing weather data with caching and rate limiting.",
-      status: "COMPLETED",
-      color: "text-accent"
+      title: "PROFITUALS",
+      tech: ["NEXT.JS", "NODE.JS", "POSTGRESQL"],
+      description: "Earn Real INR For Simple Online Tasks.",
+      status: "IN_PROGRESS",
+      color: "text-secondary",
+      codeUrl: "https://github.com/tejaspanchall/profituals",
+      demoUrl: "https://profituals.com"
     },
     {
-      title: "PORTFOLIO.WEB",
-      tech: ["REACT", "TAILWIND", "VITE"],
-      description: "Personal portfolio website with retro gaming aesthetic and responsive design.",
+      title: "C75 TRAINING",
+      tech: ["NEXT.JS"],
+      description: "More than just a gym - we're a community dedicated to helping you become your personal best.",
       status: "LIVE",
-      color: "text-pixel-blue"
+      color: "text-accent",
+      codeUrl: "https://github.com/username/weather-api",
+      demoUrl: "https://c75training.com"
     },
     {
-      title: "CHAT.BOT",
-      tech: ["PYTHON", "NLP", "WEBSOCKETS"],
-      description: "AI-powered chatbot with natural language processing and real-time communication.",
-      status: "BETA",
-      color: "text-pixel-purple"
+      title: "BANK ATM SIMULATOR",
+      tech: ["SPRING BOOT", "POSTGRESQL", "ZXING"],
+      description: "It is an end-to-end application that simulates ATM system with a Java Spring Boot backend and PostgreSQL database.",
+      status: "COMPLETED",
+      color: "text-pixel-blue",
+      codeUrl: "https://github.com/tejaspanchall/Bank-ATM-Simulator",
+      demoUrl: "https://portfolio-web-demo.vercel.app"
+    },
+    {
+      title: "BOOKCAFE",
+      tech: ["NEXT.JS", "LARAVEL", "POSTGRESQL"],
+      description: "An educational platform designed for students and teachers to discover, read, and manage digital books.",
+      status: "COMPLETED",
+      color: "text-pixel-purple",
+      codeUrl: "https://github.com/tejaspanchall/BookCafe-Frontend",
+      demoUrl: "https://bookcafe-frontend.vercel.app/"
     },
     {
       title: "GAME.ENGINE",
       tech: ["C++", "OPENGL", "SDL2"],
       description: "2D game engine with physics simulation and sprite animation system.",
       status: "ARCHIVED",
-      color: "text-pixel-pink"
+      color: "text-pixel-pink",
+      codeUrl: "https://github.com/username/game-engine",
+      demoUrl: "https://game-engine-demo.vercel.app"
     }
   ];
 
@@ -67,13 +79,11 @@ const Projects = () => {
     <div className="min-h-screen bg-background relative game-scanlines">
       <PixelNavigation />
       
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-pixel text-2xl text-primary mb-4 neon-glow">
-            🎮 PROJECT ARCADE
-          </h1>
-          <p className="text-gamer text-muted-foreground">
-            ⚡ SHOWCASING COMPLETED QUESTS AND BOSS BATTLES
+      <div className="container mx-auto px-4 py-12">
+        <div className="mb-8">
+          <h1 className="text-pixel text-3xl text-primary mb-2">PROJECTS.EXE</h1>
+          <p className="text-terminal text-sm text-foreground">
+            A collection of my recent development projects and experiments.
           </p>
         </div>
 
@@ -106,13 +116,29 @@ const Projects = () => {
                 </p>
               </div>
               
-              <div className="mt-auto flex gap-2">
-                <PixelButton size="sm" variant="primary" className="flex-1">
-                  VIEW_CODE
-                </PixelButton>
-                <PixelButton size="sm" variant="accent" className="flex-1">
-                  LIVE_DEMO
-                </PixelButton>
+              <div className="mt-auto flex gap-4 justify-center">
+                {project.title !== "PROFITUALS" && project.title !== "C75 TRAINING" && (
+                  <PixelButton 
+                    size="sm" 
+                    variant="primary" 
+                    className="w-24 text-center"
+                    href={project.codeUrl}
+                    external
+                  >
+                    VIEW_CODE
+                  </PixelButton>
+                )}
+                {project.title !== "BANK ATM SIMULATOR" && (
+                  <PixelButton 
+                    size="sm" 
+                    variant="accent" 
+                    className="w-24 text-center"
+                    href={project.demoUrl}
+                    external
+                  >
+                    LIVE_DEMO
+                  </PixelButton>
+                )}
               </div>
             </PixelCard>
           ))}
@@ -120,7 +146,7 @@ const Projects = () => {
 
         {/* Featured Project */}
         <PixelCard className="mt-8">
-          <h2 className="text-pixel text-xl text-accent mb-4">FEATURED_PROJECT.HIGHLIGHT</h2>
+          
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h3 className="text-pixel text-lg text-primary mb-3">REALTIME_COLLABORATION.SUITE</h3>
@@ -139,9 +165,23 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              <div className="flex gap-3">
-                <PixelButton variant="primary">VIEW_PROJECT</PixelButton>
-                <PixelButton variant="secondary">READ_CASE_STUDY</PixelButton>
+              <div className="flex gap-5">
+                <PixelButton 
+                  variant="primary"
+                  className="w-32 text-center"
+                  href="https://github.com/username/realtime-collab"
+                  external
+                >
+                  VIEW_PROJECT
+                </PixelButton>
+                <PixelButton 
+                  variant="secondary"
+                  className="w-32 text-center"
+                  href="https://blog.example.com/realtime-collab-case-study"
+                  external
+                >
+                  READ_CASE_STUDY
+                </PixelButton>
               </div>
             </div>
             <div className="bg-muted p-4 border border-primary">
