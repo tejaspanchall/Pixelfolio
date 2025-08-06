@@ -3,6 +3,7 @@ import PixelNavigation from "@/components/PixelNavigation";
 import PixelCard from "@/components/PixelCard";
 import PixelButton from "@/components/PixelButton";
 import { useToast } from "@/hooks/use-toast";
+import { sendEmail } from "@/lib/email";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,15 +12,39 @@ const Contact = () => {
     subject: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "MESSAGE_SENT.SUCCESS",
-      description: "Your message has been transmitted successfully!",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(true);
+    
+    try {
+      const success = await sendEmail(formData);
+      
+      if (success) {
+        toast({
+          title: "MESSAGE_SENT.SUCCESS",
+          description: "Your message has been transmitted successfully!",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        toast({
+          title: "MESSAGE_SENT.ERROR",
+          description: "Failed to send message. Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "MESSAGE_SENT.ERROR",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -32,27 +57,24 @@ const Contact = () => {
   const contactMethods = [
     {
       method: "EMAIL.PROTOCOL",
-      value: "dev@portfolio.exe",
+      value: "tejaspanchal127@gmail.com",
+      link: "mailto:tejaspanchal127@gmail.com",
       icon: "📧",
       description: "Primary communication channel"
     },
     {
       method: "GITHUB.REPOSITORY",
-      value: "github.com/developer",
+      value: "github.com/tejaspanchall",
+      link: "https://github.com/tejaspanchall",
       icon: "🔗",
       description: "Code repositories and contributions"
     },
     {
       method: "LINKEDIN.NETWORK",
-      value: "linkedin.com/in/developer",
+      value: "linkedin.com/in/tejaspanchall",
+      link: "https://www.linkedin.com/in/tejaspanchall",
       icon: "💼",
       description: "Professional networking"
-    },
-    {
-      method: "TWITTER.FEED",
-      value: "@developer_handle",
-      icon: "🐦",
-      description: "Tech thoughts and updates"
     }
   ];
 
@@ -87,6 +109,7 @@ const Contact = () => {
                   className="w-full bg-input border-2 border-primary p-3 text-terminal text-sm focus:outline-none focus:border-accent transition-colors"
                   placeholder="Enter your name..."
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -102,6 +125,7 @@ const Contact = () => {
                   className="w-full bg-input border-2 border-primary p-3 text-terminal text-sm focus:outline-none focus:border-accent transition-colors"
                   placeholder="your.email@domain.com"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -117,6 +141,7 @@ const Contact = () => {
                   className="w-full bg-input border-2 border-primary p-3 text-terminal text-sm focus:outline-none focus:border-accent transition-colors"
                   placeholder="Message subject..."
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -132,11 +157,17 @@ const Contact = () => {
                   className="w-full bg-input border-2 border-primary p-3 text-terminal text-sm focus:outline-none focus:border-accent transition-colors resize-none"
                   placeholder="Type your message here..."
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
-              <PixelButton type="submit" variant="primary" className="w-full">
-                TRANSMIT_MESSAGE.EXE
+              <PixelButton 
+                type="submit" 
+                variant="primary" 
+                className="w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "TRANSMITTING..." : "TRANSMIT_MESSAGE.EXE"}
               </PixelButton>
             </form>
           </PixelCard>
@@ -154,9 +185,15 @@ const Contact = () => {
                         {contact.method}
                       </span>
                     </div>
-                    <p className="text-terminal text-sm text-primary mb-1">
-                      {contact.value}
-                    </p>
+                    <a 
+                      href={contact.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-terminal text-sm text-primary mb-1 hover:text-accent transition-colors flex items-center gap-1 group"
+                    >
+                      <span>{contact.value}</span>
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+                    </a>
                     <p className="text-terminal text-xs text-muted-foreground">
                       {contact.description}
                     </p>
