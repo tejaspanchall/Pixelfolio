@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PixelNavigation from "@/components/PixelNavigation";
 import PixelCard from "@/components/PixelCard";
 import PixelButton from "@/components/PixelButton";
+import GitHubContributionChart from "@/components/GitHubContributionChart";
 import gamerHero from "@/assets/gamer-hero.png";
 
 const Index = () => {
@@ -113,27 +114,42 @@ const Index = () => {
         </div>
       </section>
 
+      {/* GitHub Activity */}
+      <section className="container mx-auto px-4 py-8">
+        <GitHubContributionChart username="tejaspanchall" />
+      </section>
+
       {/* Player Profile */}
       <section className="container mx-auto px-4 py-8">
         <PixelCard>
           <h2 className="text-pixel text-xl text-accent mb-6 neon-glow">🎮 PLAYER PROFILE</h2>
-          <div className="space-y-4 text-gamer">
-            <p className="text-sm leading-relaxed">
-              ⚡ SPAWNING DEVELOPER INSTANCE...
-            </p>
-            <p className="text-sm leading-relaxed">
-              Greetings, fellow gamers! I'm a passionate software developer who transforms 
-              creative ideas into epic digital adventures. With mastery in modern web 
-              technologies and a quest for clean, efficient code.
-            </p>
-            <p className="text-sm leading-relaxed">
-              🏆 SPECIALIZATION: Full-stack development, React ecosystems, 
-              and creating legendary user experiences.
-            </p>
-            <p className="text-sm leading-relaxed">
-              When not grinding code, you'll find me exploring new tech dungeons, 
-              contributing to open source guilds, or speed-running classic games for inspiration.
-            </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <div className="text-gamer">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-muted-foreground">CLASS:</span>
+                  <span className="text-primary">Full-Stack Developer</span>
+                </div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-muted-foreground">LEVEL:</span>
+                  <span className="text-accent">Software Engineer</span>
+                </div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-muted-foreground">STATUS:</span>
+                  <span className="text-secondary">Available for opportunities</span>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-3">
+              <div className="bg-muted/20 p-3 rounded border border-accent/20">
+                <p className="text-pixel text-xs text-accent mb-1">CURRENT QUEST:</p>
+                <p className="text-gamer text-sm">Building innovative web solutions and mastering new technologies</p>
+              </div>
+              <div className="bg-muted/20 p-3 rounded border border-primary/20">
+                <p className="text-pixel text-xs text-primary mb-1">MAIN_SKILLS:</p>
+                <p className="text-gamer text-sm">React • Node.js • JavaScript • Java • Python</p>
+              </div>
+            </div>
           </div>
         </PixelCard>
       </section>
