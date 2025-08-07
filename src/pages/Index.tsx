@@ -118,41 +118,6 @@ const Index = () => {
       <section className="container mx-auto px-4 py-8">
         <GitHubContributionChart username="tejaspanchall" />
       </section>
-
-      {/* Player Profile */}
-      <section className="container mx-auto px-4 py-8">
-        <PixelCard>
-          <h2 className="text-pixel text-xl text-accent mb-6 neon-glow">🎮 PLAYER PROFILE</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="text-gamer">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-muted-foreground">CLASS:</span>
-                  <span className="text-primary">Full-Stack Developer</span>
-                </div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-muted-foreground">LEVEL:</span>
-                  <span className="text-accent">Software Engineer</span>
-                </div>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-muted-foreground">STATUS:</span>
-                  <span className="text-secondary">Available for opportunities</span>
-                </div>
-              </div>
-            </div>
-            <div className="space-y-3">
-              <div className="bg-muted/20 p-3 rounded border border-accent/20">
-                <p className="text-pixel text-xs text-accent mb-1">CURRENT QUEST:</p>
-                <p className="text-gamer text-sm">Building innovative web solutions and mastering new technologies</p>
-              </div>
-              <div className="bg-muted/20 p-3 rounded border border-primary/20">
-                <p className="text-pixel text-xs text-primary mb-1">MAIN_SKILLS:</p>
-                <p className="text-gamer text-sm">React • Node.js • JavaScript • Java • Python</p>
-              </div>
-            </div>
-          </div>
-        </PixelCard>
-      </section>
     </div>
   );
 };
