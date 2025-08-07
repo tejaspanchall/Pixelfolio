@@ -2,6 +2,7 @@ import { useState } from "react";
 import PixelNavigation from "@/components/PixelNavigation";
 import PixelCard from "@/components/PixelCard";
 import PixelButton from "@/components/PixelButton";
+import GitHubContributionChart from "@/components/GitHubContributionChart";
 
 const About = () => {
   const skillCategories = {
@@ -141,6 +142,11 @@ const About = () => {
               </div> */}
             </div>
           </PixelCard>
+        </div>
+
+        {/* GitHub Contribution Chart */}
+        <div className="mt-8">
+          <GitHubContributionChart username="tejaspanchall" />
         </div>
 
         {/* Work Experience */}
