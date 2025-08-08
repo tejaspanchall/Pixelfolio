@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // Middleware
 app.use(cors());
@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Create a transporter using Gmail SMTP
 const createTransporter = () => {
-  return nodemailer.createTransporter({
+  return nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: process.env.GMAIL_USER,
