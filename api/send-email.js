@@ -6,8 +6,8 @@ const createTransporter = () => {
   return nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.VITE_GMAIL_USER,
-      pass: process.env.VITE_GMAIL_APP_PASSWORD,
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD,
     },
   });
 };
@@ -205,7 +205,7 @@ exports.handler = async (event) => {
     // Send email
     await transporter.sendMail({
       from: `"${name}" <${email}>`,
-      to: process.env.VITE_GMAIL_USER,
+      to: process.env.GMAIL_USER,
       subject: `[PIXELFOLIO] New Contact: ${subject}`,
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`,
       html: htmlTemplate,
