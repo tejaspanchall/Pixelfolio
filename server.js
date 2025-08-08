@@ -1,9 +1,17 @@
-// Serverless function for sending emails
+const express = require('express');
 const nodemailer = require('nodemailer');
+const cors = require('cors');
+
+const app = express();
+const PORT = 3001;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
 
 // Create a transporter using Gmail SMTP
 const createTransporter = () => {
-  return nodemailer.createTransport({
+  return nodemailer.createTransporter({
     service: 'gmail',
     auth: {
       user: process.env.GMAIL_USER,
@@ -174,26 +182,14 @@ const createEmailTemplate = (name, email, subject, message) => {
   `;
 };
 
-// Handle the serverless function request
-exports.handler = async (event) => {
-  // Only allow POST requests
-  if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ success: false, error: 'Method not allowed' }),
-    };
-  }
-
+// Email endpoint
+app.post('/api/send-email', async (req, res) => {
   try {
-    // Parse the request body
-    const { name, email, subject, message } = JSON.parse(event.body);
+    const { name, email, subject, message } = req.body;
     
     // Validate required fields
     if (!name || !email || !subject || !message) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ success: false, error: 'Missing required fields' }),
-      };
+      return res.status(400).json({ success: false, error: 'Missing required fields' });
     }
     
     // Create transporter
@@ -211,18 +207,14 @@ exports.handler = async (event) => {
       html: htmlTemplate,
     });
     
-    // Return success response
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ success: true }),
-    };
+    console.log(`Email sent successfully from ${email}`);
+    res.json({ success: true });
   } catch (error) {
     console.error('Error sending email:', error);
-    
-    // Return error response
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ success: false, error: 'Failed to send email' }),
-    };
+    res.status(500).json({ success: false, error: 'Failed to send email' });
   }
-}; 
+});
+
+app.listen(PORT, () => {
+  console.log(`Email server running on http://localhost:${PORT}`);
+});
