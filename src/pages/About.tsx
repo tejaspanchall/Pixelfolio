@@ -157,7 +157,7 @@ const About = () => {
                   <p className="text-sm text-secondary font-medium">DMI Systems Pvt. Ltd.</p>
                 </div>
                 <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded mt-2 md:mt-0">
-                  2025 - Present
+                  Feb 2025 - Aug 2025
                 </span>
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">
@@ -176,7 +176,7 @@ const About = () => {
                   </h3>
                 </div>
                 <span className="text-xs text-muted-foreground bg-secondary/10 px-2 py-1 rounded mt-2 md:mt-0">
-                  2024 - Present
+                  June 2024 - Present
                 </span>
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">
@@ -196,7 +196,7 @@ const About = () => {
                   <p className="text-sm text-secondary font-medium">beingotaku</p>
                 </div>
                 <span className="text-xs text-muted-foreground bg-accent/10 px-2 py-1 rounded mt-2 md:mt-0">
-                  2022 - 2023
+                  Mar 2022 - Feb 2023
                 </span>
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">
