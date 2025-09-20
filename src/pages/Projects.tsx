@@ -11,7 +11,7 @@ const Projects = () => {
       status: "IN_PROGRESS",
       color: "text-primary",
       codeUrl: "https://github.com/tejaspanchall/justanime",
-      demoUrl: "https://justanime.com"
+      demoUrl: "https://justanime.to"
     },
     {
       title: "PROFITUALS",
