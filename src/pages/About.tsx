@@ -176,7 +176,7 @@ const About = () => {
                   </h3>
                 </div>
                 <span className="text-xs text-muted-foreground bg-secondary/10 px-2 py-1 rounded mt-2 md:mt-0">
-                  June 2024 - Present
+                  June 2024 - July 2025
                 </span>
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">
