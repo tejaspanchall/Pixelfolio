@@ -23,6 +23,15 @@ const Projects = () => {
       demoUrl: "https://profituals.com"
     },
     {
+      title: "GINX MEDIA",
+      tech: ["REACT"],
+      description: "Digital Marketing Agency.",
+      status: "LIVE",
+      color: "text-primary",
+      codeUrl: "https://github.com/tejaspanchall/ginx-media",
+      demoUrl: "https://ginxmedia.co"
+    },
+    {
       title: "C75 TRAINING",
       tech: ["NEXT.JS"],
       description: "More than just a gym - we're a community dedicated to helping you become your personal best.",
@@ -108,7 +117,7 @@ const Projects = () => {
               </div>
               
               <div className="mt-auto flex gap-4 justify-center">
-                {project.title !== "PROFITUALS" && project.title !== "C75 TRAINING" && (
+                {project.title !== "PROFITUALS" && project.title !== "GINX MEDIA" && project.title !== "C75 TRAINING" && (
                   <PixelButton 
                     size="sm" 
                     variant="primary" 
