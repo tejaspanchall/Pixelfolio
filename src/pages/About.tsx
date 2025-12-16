@@ -152,12 +152,12 @@ const About = () => {
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                 <div>
                   <h3 className="text-accent text-pixel text-base font-bold mb-1">
-                    Software Engineer Intern
+                    Jr. Software Engineer
                   </h3>
                   <p className="text-sm text-secondary font-medium">DMI Systems Pvt. Ltd.</p>
                 </div>
                 <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded mt-2 md:mt-0">
-                  Feb 2025 - Aug 2025
+                  Aug 2025 - Present
                 </span>
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">
@@ -172,11 +172,12 @@ const About = () => {
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                 <div>
                   <h3 className="text-accent text-pixel text-base font-bold mb-1">
-                    Freelance Web Developer
+                    Website Developer
                   </h3>
+                  <p className="text-sm text-secondary font-medium">GinX Media Pvt. Ltd.</p>
                 </div>
                 <span className="text-xs text-muted-foreground bg-secondary/10 px-2 py-1 rounded mt-2 md:mt-0">
-                  June 2024 - July 2025
+                  Dec 2023 - July 2025
                 </span>
               </div>
               <ul className="text-xs text-muted-foreground space-y-1">

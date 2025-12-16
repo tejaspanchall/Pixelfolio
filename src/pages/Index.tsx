@@ -96,8 +96,8 @@ const Index = () => {
       <section className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "PROJECTS BUILT", value: "8+", icon: "💻" },
-            { label: "EXPERIENCE", value: "1Y", icon: "⭐" },
+            { label: "PROJECTS BUILT", value: "12+", icon: "💻" },
+            { label: "EXPERIENCE", value: "2Y+", icon: "⭐" },
             { label: "TECH STACK", value: "15+", icon: "🛠️" },
             { label: "COFFEE CONSUMED", value: "∞", icon: "☕" }
           ].map((stat) => (
