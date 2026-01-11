@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import Navigation from "@/components/Navigation";
-import Card from "@/components/Card";
-import Button from "@/components/Button";
+import PixelNavigation from "@/components/PixelNavigation";
+import PixelCard from "@/components/PixelCard";
+import PixelButton from "@/components/PixelButton";
 import { useToast } from "@/hooks/use-toast";
 import { sendEmail } from "@/lib/email";
-import { Mail, Github, Linkedin, Send, ArrowUpRight } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,13 +24,13 @@ const Contact = () => {
       
       if (success) {
         toast({
-          title: "Message sent!",
-          description: "Thanks for reaching out. I'll get back to you soon.",
+          title: "MESSAGE_SENT.SUCCESS",
+          description: "Your message has been transmitted successfully!",
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
         toast({
-          title: "Something went wrong",
+          title: "MESSAGE_SENT.ERROR",
           description: "Failed to send message. Please try again later.",
           variant: "destructive",
         });
@@ -40,7 +38,7 @@ const Contact = () => {
     } catch (error) {
       console.error("Error sending email:", error);
       toast({
-        title: "Something went wrong",
+        title: "MESSAGE_SENT.ERROR",
         description: "Failed to send message. Please try again later.",
         variant: "destructive",
       });
@@ -56,182 +54,173 @@ const Contact = () => {
     }));
   };
 
-  const contactLinks = [
+  const contactMethods = [
     {
-      name: "Email",
+      method: "EMAIL.PROTOCOL",
       value: "tejaspanchal127@gmail.com",
-      href: "mailto:tejaspanchal127@gmail.com",
-      icon: Mail
+      link: "mailto:tejaspanchal127@gmail.com",
+      icon: "📧",
+      description: "Primary communication channel"
     },
     {
-      name: "GitHub",
+      method: "GITHUB.REPOSITORY",
       value: "github.com/tejaspanchall",
-      href: "https://github.com/tejaspanchall",
-      icon: Github
+      link: "https://github.com/tejaspanchall",
+      icon: "🔗",
+      description: "Code repositories and contributions"
     },
     {
-      name: "LinkedIn",
+      method: "LINKEDIN.NETWORK",
       value: "linkedin.com/in/tejaspanchall",
-      href: "https://www.linkedin.com/in/tejaspanchall",
-      icon: Linkedin
+      link: "https://www.linkedin.com/in/tejaspanchall",
+      icon: "💼",
+      description: "Professional networking"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
+    <div className="min-h-screen bg-background game-scanlines pt-16">
+      <PixelNavigation />
       
-      <div className="pt-32 pb-20">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto mb-16"
-          >
-            <h1 className="heading-lg text-foreground mb-4">Get in Touch</h1>
-            <p className="text-body">
-              Have a project in mind or just want to say hello? I'd love to hear from you.
-            </p>
-          </motion.div>
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center mb-8">
+          <h1 className="text-pixel text-2xl text-primary mb-4 neon-glow">
+            📡 COMMUNICATION HUB
+          </h1>
+          <p className="text-gamer text-muted-foreground">
+            ⚡ ESTABLISHING MULTIPLAYER CONNECTION...
+          </p>
+        </div>
 
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-            {/* Contact Form */}
-            <Card hover={false} delay={0.1}>
-              <h2 className="font-display text-xl font-semibold text-foreground mb-6">
-                Send a message
-              </h2>
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full bg-input border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
-                    placeholder="Your name"
-                    required
-                    disabled={isSubmitting}
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full bg-input border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
-                    placeholder="your@email.com"
-                    required
-                    disabled={isSubmitting}
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full bg-input border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
-                    placeholder="What's this about?"
-                    required
-                    disabled={isSubmitting}
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={5}
-                    className="w-full bg-input border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all resize-none"
-                    placeholder="Tell me about your project..."
-                    required
-                    disabled={isSubmitting}
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  variant="primary" 
-                  className="w-full"
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Contact Form */}
+          <PixelCard>
+            <h2 className="text-pixel text-xl text-accent mb-6">SEND_MESSAGE.FORM</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="block text-pixel text-xs text-primary mb-2">
+                  NAME.INPUT
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full bg-input border-2 border-primary p-3 text-terminal text-sm focus:outline-none focus:border-accent transition-colors"
+                  placeholder="Enter your name..."
+                  required
                   disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      Send Message
-                      <Send className="w-4 h-4 ml-2" />
-                    </>
-                  )}
-                </Button>
-              </form>
-            </Card>
+                />
+              </div>
 
-            {/* Contact Links */}
-            <div className="space-y-6">
-              <Card hover={false} delay={0.2}>
-                <h2 className="font-display text-xl font-semibold text-foreground mb-6">
-                  Other ways to reach me
-                </h2>
-                <div className="space-y-4">
-                  {contactLinks.map((link) => (
-                    <a
-                      key={link.name}
-                      href={link.href}
-                      target="_blank"
+              <div>
+                <label className="block text-pixel text-xs text-primary mb-2">
+                  EMAIL.ADDRESS
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full bg-input border-2 border-primary p-3 text-terminal text-sm focus:outline-none focus:border-accent transition-colors"
+                  placeholder="your.email@domain.com"
+                  required
+                  disabled={isSubmitting}
+                />
+              </div>
+
+              <div>
+                <label className="block text-pixel text-xs text-primary mb-2">
+                  SUBJECT.LINE
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full bg-input border-2 border-primary p-3 text-terminal text-sm focus:outline-none focus:border-accent transition-colors"
+                  placeholder="Message subject..."
+                  required
+                  disabled={isSubmitting}
+                />
+              </div>
+
+              <div>
+                <label className="block text-pixel text-xs text-primary mb-2">
+                  MESSAGE.BODY
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={6}
+                  className="w-full bg-input border-2 border-primary p-3 text-terminal text-sm focus:outline-none focus:border-accent transition-colors resize-none"
+                  placeholder="Type your message here..."
+                  required
+                  disabled={isSubmitting}
+                />
+              </div>
+
+              <PixelButton 
+                type="submit" 
+                variant="primary" 
+                className="w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "TRANSMITTING..." : "TRANSMIT_MESSAGE.EXE"}
+              </PixelButton>
+            </form>
+          </PixelCard>
+
+          {/* Contact Methods */}
+          <div className="space-y-6">
+            <PixelCard>
+              <h2 className="text-pixel text-xl text-secondary mb-6">CONTACT_METHODS.LIST</h2>
+              <div className="space-y-4">
+                {contactMethods.map((contact) => (
+                  <div key={contact.method} className="border-l-2 border-primary pl-4">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-lg">{contact.icon}</span>
+                      <span className="text-pixel text-xs text-accent">
+                        {contact.method}
+                      </span>
+                    </div>
+                    <a 
+                      href={contact.link} 
+                      target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex items-center gap-4 p-3 rounded-lg hover:bg-accent/50 transition-colors group"
+                      className="text-terminal text-sm text-primary mb-1 hover:text-accent transition-colors flex items-center gap-1 group"
                     >
-                      <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
-                        <link.icon className="w-5 h-5 text-foreground" />
-                      </div>
-                      <div className="flex-grow">
-                        <p className="text-sm font-medium text-foreground">
-                          {link.name}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          {link.value}
-                        </p>
-                      </div>
-                      <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+                      <span>{contact.value}</span>
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
                     </a>
-                  ))}
-                </div>
-              </Card>
-
-              <Card hover={false} delay={0.3}>
-                <h2 className="font-display text-xl font-semibold text-foreground mb-4">
-                  Current Status
-                </h2>
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-foreground">Available for work</span>
+                    <p className="text-terminal text-xs text-muted-foreground">
+                      {contact.description}
+                    </p>
                   </div>
-                  <p className="text-muted-foreground">
-                    Currently accepting job opportunities, freelance projects, and interesting 
-                    collaborations. Response time is typically within 24 hours.
-                  </p>
+                ))}
+              </div>
+            </PixelCard>
+
+            <PixelCard>
+              <h2 className="text-pixel text-xl text-primary mb-4">STATUS.ONLINE</h2>
+              <div className="text-terminal text-sm space-y-2">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">SERVER_STATUS:</span>
+                  <span className="text-primary">ONLINE</span>
                 </div>
-              </Card>
-            </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">RESPONSE_TIME:</span>
+                  <span className="text-accent">&lt; 24H</span>
+                </div>
+              </div>
+              
+              <div className="mt-4 p-3 bg-muted border border-primary">
+                <p className="text-terminal text-xs text-foreground">
+                  &gt; CURRENTLY_ACCEPTING: Job Opportunities, freelance projects, collaborations, and interesting challenges. Let's build something amazing!
+                </p>
+              </div>
+            </PixelCard>
           </div>
         </div>
       </div>

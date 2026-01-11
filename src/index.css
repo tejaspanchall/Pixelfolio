@@ -2,60 +2,119 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Minimal Portfolio Design System - Inspired by akshatmittal.com
-   All colors MUST be HSL. Dark, professional aesthetic.
+/* Gamer Pixelated Portfolio Design System - Arcade/Gaming Theme
+All colors MUST be HSL. Bright arcade gaming aesthetic.
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&display=swap');
 
 @layer base {
   :root {
-    /* Dark charcoal background */
-    --background: 220 10% 11%;
-    --foreground: 0 0% 95%;
+    /* Dark pastel background theme */
+    --background: 250 15% 12%;
+    --foreground: 280 25% 85%;
 
-    --card: 220 10% 14%;
-    --card-foreground: 0 0% 95%;
+    --card: 250 20% 16%;
+    --card-foreground: 280 25% 85%;
 
-    --popover: 220 10% 14%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 250 20% 16%;
+    --popover-foreground: 280 25% 85%;
 
-    /* White/Light primary */
-    --primary: 0 0% 98%;
-    --primary-foreground: 220 10% 11%;
+    /* Dark pastel blue as primary */
+    --primary: 220 50% 65%;
+    --primary-foreground: 220 30% 15%;
 
-    /* Subtle gray secondary */
-    --secondary: 220 8% 20%;
-    --secondary-foreground: 0 0% 95%;
+    /* Dark pastel pink secondary */
+    --secondary: 320 45% 70%;
+    --secondary-foreground: 320 25% 15%;
 
-    /* Muted grays */
-    --muted: 220 8% 18%;
-    --muted-foreground: 220 8% 55%;
+    /* Dark pastel purple muted */
+    --muted: 260 20% 25%;
+    --muted-foreground: 280 20% 70%;
 
-    /* Accent - subtle warm gray */
-    --accent: 220 8% 25%;
-    --accent-foreground: 0 0% 95%;
+    /* Dark pastel mint accent */
+    --accent: 180 40% 65%;
+    --accent-foreground: 180 25% 15%;
 
-    /* Destructive */
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 98%;
+    /* Dark pastel red for errors */
+    --destructive: 0 50% 65%;
+    --destructive-foreground: 0 25% 15%;
 
-    /* Borders and inputs */
-    --border: 220 8% 20%;
-    --input: 220 10% 16%;
-    --ring: 0 0% 60%;
+    /* Dark borders and inputs */
+    --border: 280 25% 30%;
+    --input: 250 15% 20%;
+    --ring: 220 50% 65%;
 
-    /* Modern radius */
-    --radius: 12px;
+    /* Sharp pixel radius for gaming look */
+    --radius: 0px;
 
-    --sidebar-background: 220 10% 11%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 0 0% 98%;
-    --sidebar-primary-foreground: 220 10% 11%;
-    --sidebar-accent: 220 8% 18%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 220 8% 20%;
-    --sidebar-ring: 0 0% 60%;
+    /* Dark pastel gaming colors */
+    --neon-green: 120 45% 60%;
+    --neon-yellow: 60 50% 65%;
+    --neon-orange: 30 50% 65%;
+    --neon-purple: 280 45% 65%;
+    
+    /* Soft shadows without glow */
+    --shadow-neon: 4px 4px 0px hsl(var(--primary));
+    --shadow-neon-hover: 6px 6px 0px hsl(var(--primary));
+    --shadow-pink: 4px 4px 0px hsl(var(--secondary));
+    
+    /* Gaming animations */
+    --transition-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -65,147 +124,117 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    @apply bg-background text-foreground font-sans;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
   }
 }
 
 @layer components {
-  /* Modern heading styles */
-  .heading-display {
-    font-family: 'Sora', sans-serif;
-    @apply font-semibold tracking-tight;
+  /* Gaming button styles */
+  .btn-game {
+    @apply border-2 bg-card text-primary font-bold px-4 py-2 transition-all duration-200;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    box-shadow: var(--shadow-neon);
+    border-image: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary))) 1;
+  }
+  
+  .btn-game:hover {
+    @apply bg-primary text-primary-foreground;
+    box-shadow: var(--shadow-neon-hover);
+    transform: translate(-2px, -2px) scale(1.05);
+  }
+  
+  .btn-game:active {
+    box-shadow: 2px 2px 0px hsl(var(--primary));
+    transform: translate(2px, 2px) scale(0.95);
   }
 
-  .heading-xl {
-    font-family: 'Sora', sans-serif;
-    @apply text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight;
+  /* Gaming card styles */
+  .card-game {
+    @apply bg-card border-2 p-6 relative overflow-hidden;
+    border-image: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary))) 1;
+    box-shadow: var(--shadow-neon);
+  }
+  
+  .card-game:hover {
+    box-shadow: var(--shadow-neon-hover);
+    transform: translate(-2px, -2px);
   }
 
-  .heading-lg {
-    font-family: 'Sora', sans-serif;
-    @apply text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight;
-  }
-
-  .heading-md {
-    font-family: 'Sora', sans-serif;
-    @apply text-xl md:text-2xl font-medium tracking-tight;
-  }
-
-  .text-body {
-    @apply text-base md:text-lg leading-relaxed text-muted-foreground;
-  }
-
-  .text-body-sm {
-    @apply text-sm leading-relaxed text-muted-foreground;
-  }
-
-  /* Modern card */
-  .card-modern {
-    @apply bg-card rounded-2xl p-6 md:p-8 border border-border/50 transition-all duration-300;
-  }
-
-  .card-modern:hover {
-    @apply border-border bg-card/80;
-  }
-
-  /* Modern button */
-  .btn-modern {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300;
-  }
-
-  .btn-modern-primary {
-    @apply btn-modern bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105;
-  }
-
-  .btn-modern-secondary {
-    @apply btn-modern border border-border text-foreground hover:bg-accent hover:border-accent;
-  }
-
-  /* Gradient text */
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60;
-  }
-
-  /* Topographic background pattern */
-  .bg-topographic {
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23ffffff' fill-opacity='0.015' fill-rule='evenodd'/%3E%3C/svg%3E");
-  }
-
-  /* Contour lines effect */
-  .bg-contour {
-    background-image: 
-      radial-gradient(ellipse 80% 50% at 50% 50%, transparent 0%, hsl(220 10% 11%) 70%),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cdefs%3E%3Cpattern id='contour' patternUnits='userSpaceOnUse' width='400' height='400'%3E%3Cpath d='M200 20 Q300 100 200 200 Q100 300 200 380' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3Cpath d='M100 0 Q200 150 100 300 Q50 400 150 400' fill='none' stroke='rgba(255,255,255,0.02)' stroke-width='1'/%3E%3Cpath d='M300 0 Q350 100 300 200 Q250 300 350 400' fill='none' stroke='rgba(255,255,255,0.025)' stroke-width='1'/%3E%3Ccircle cx='200' cy='200' r='80' fill='none' stroke='rgba(255,255,255,0.02)' stroke-width='1'/%3E%3Ccircle cx='200' cy='200' r='120' fill='none' stroke='rgba(255,255,255,0.015)' stroke-width='1'/%3E%3Ccircle cx='200' cy='200' r='160' fill='none' stroke='rgba(255,255,255,0.01)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23contour)'/%3E%3C/svg%3E");
-  }
-
-  /* Hero gradient oval */
-  .hero-glow {
-    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
-    width: 600px;
-    height: 500px;
-    background: radial-gradient(ellipse at center, hsl(220 10% 16%) 0%, hsl(220 10% 13%) 40%, transparent 70%);
-    filter: blur(40px);
-  }
-
-  /* Scroll indicator animation */
-  @keyframes bounce-slow {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
-  }
-
-  .animate-bounce-slow {
-    animation: bounce-slow 2s ease-in-out infinite;
-  }
-
-  /* Smooth scroll */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Section spacing */
-  .section-padding {
-    @apply py-20 md:py-32;
-  }
-
-  /* Link hover effect */
-  .link-underline {
-    @apply relative;
-  }
-
-  .link-underline::after {
+  .card-game::before {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-px bg-foreground transition-all duration-300;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
   }
 
-  .link-underline:hover::after {
-    @apply w-full;
+  .card-game:hover::before {
+    left: 100%;
   }
 
-  /* Tag/badge styles */
-  .tag {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent/50 text-muted-foreground border border-border/50;
+  /* Gaming text effects */
+  .text-gamer {
+    font-family: 'Orbitron', monospace;
+    @apply text-primary;
+  }
+  
+  .text-pixel {
+    font-family: 'Press Start 2P', monospace;
   }
 
-  .tag-primary {
-    @apply tag bg-primary/10 text-primary border-primary/20;
+  /* Removed glow effects for pastel theme */
+  .neon-glow {
+    /* No text shadow for pastel theme */
   }
-}
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+  /* Gaming health/progress bar */
+  .health-bar {
+    @apply relative bg-muted border-2 border-primary overflow-hidden;
+    height: 16px;
+  }
 
-::-webkit-scrollbar-track {
-  background: hsl(220 10% 11%);
-}
+  .health-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.1) 2px,
+      rgba(255,255,255,0.1) 4px
+    );
+  }
 
-::-webkit-scrollbar-thumb {
-  background: hsl(220 8% 25%);
-  border-radius: 4px;
-}
+  /* Gaming achievement badge */
+  .achievement {
+    @apply bg-gradient-to-r from-secondary to-accent text-accent-foreground px-3 py-1 border-2 border-accent;
+    animation: pulse 2s infinite;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(220 8% 35%);
+  /* Retro scanlines effect but more subtle for gaming */
+  .game-scanlines::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      transparent 50%, 
+      rgba(0, 150, 255, 0.02) 50%
+    );
+    background-size: 100% 3px;
+    pointer-events: none;
+  }
 }
