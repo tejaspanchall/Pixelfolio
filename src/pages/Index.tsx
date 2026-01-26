@@ -1,123 +1,83 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import PixelNavigation from "@/components/PixelNavigation";
-import PixelCard from "@/components/PixelCard";
-import PixelButton from "@/components/PixelButton";
-import GitHubContributionChart from "@/components/GitHubContributionChart";
-import gamerHero from "@/assets/gamer-hero.png";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const Index = () => {
-  const [displayText, setDisplayText] = useState("");
-  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
-  
-  const titles = [
-    "SOFTWARE ENGINEER",
-    "FULLSTACK DEVELOPER",
-    "BACKEND DEVELOPER",
-    "FRONTEND DEVELOPER"
-  ];
-
-  useEffect(() => {
-    let currentIndex = 0;
-    const currentTitle = titles[currentTitleIndex];
-    
-    const interval = setInterval(() => {
-      if (currentIndex <= currentTitle.length) {
-        setDisplayText(currentTitle.slice(0, currentIndex));
-        currentIndex++;
-      } else {
-        clearInterval(interval);
-        // Wait 2 seconds then move to next title
-        setTimeout(() => {
-          setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
-        }, 2000);
-      }
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, [currentTitleIndex]);
-
   return (
-    <div className="min-h-screen bg-background relative game-scanlines pt-16">
-      <PixelNavigation />
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navigation />
       
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
-            <div className="text-gamer text-sm text-muted-foreground">
-            ✨ WELCOME TO MY PORTFOLIO ✨
-            </div>
-            
-            <h1 className="text-pixel text-3xl md:text-4xl text-primary">
-              {displayText}
-              <span className="animate-pulse text-accent">█</span>
-            </h1>
-            
-            <div className="space-y-4 text-gamer">
-              <p className="text-lg text-secondary">
-                🎯 BUILDING INNOVATIVE DIGITAL SOLUTIONS
-              </p>
-              <p className="text-foreground leading-relaxed">
-                Welcome to my development portfolio! I'm a passionate developer who 
-                creates robust web applications with modern tech stacks and attention to detail.
-              </p>
-            </div>
-            
-            <div className="flex flex-wrap gap-4">
-              <PixelButton 
-                variant="accent" 
-                size="lg" 
-                href="/Tejas Panchal Resume.pdf" 
-                external
-                download="Tejas Panchal Resume.pdf"
-              >
-                📄 DOWNLOAD RESUME
-              </PixelButton>
-              <Link to="/contact">
-                <PixelButton variant="primary" size="lg">
-                  CONTACT_ME
-                </PixelButton>
-              </Link>
-            </div>
-          </div>
-          
-          <div className="relative">
-            <img 
-              src={gamerHero} 
-              alt="Developer workspace"
-              className="w-full h-auto rounded-lg shadow-lg border border-border/20"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Developer Stats */}
-      <section className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { label: "PROJECTS BUILT", value: "12+", icon: "💻" },
-            { label: "EXPERIENCE", value: "2Y+", icon: "⭐" },
-            { label: "TECH STACK", value: "15+", icon: "🛠️" },
-            { label: "COFFEE CONSUMED", value: "∞", icon: "☕" }
-          ].map((stat) => (
-            <PixelCard key={stat.label} className="text-center">
-              <div className="text-2xl mb-2">{stat.icon}</div>
-              <div className="text-pixel text-xl text-primary mb-2">
-                {stat.value}
-              </div>
-              <div className="text-pixel text-xs text-muted-foreground">
-                {stat.label}
-              </div>
-            </PixelCard>
-          ))}
-        </div>
-      </section>
-
-      {/* GitHub Activity */}
-      <section className="container mx-auto px-4 py-8">
-        <GitHubContributionChart username="tejaspanchall" />
-      </section>
+      <main className="container-narrow flex-1">
+        <h1 className="text-3xl font-bold mb-8">Tejas Panchal</h1>
+        
+        <p>I'm Tejas. 👋🏽</p>
+        
+        <p>
+          I'm a passionate Software Engineer with 2+ years of experience building robust web applications. 
+          Currently working as a Jr. Software Engineer at{" "}
+          <a href="https://www.dmisystems.in/" target="_blank" rel="noopener noreferrer">
+            DMI Systems Pvt. Ltd.
+          </a>
+          , where I develop full-stack solutions using React.js, Laravel, and PostgreSQL.
+        </p>
+        
+        <p>
+          Previously, I worked as a Website Developer at{" "}
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            GinX Media
+          </a>
+          , building reward-based platforms with payment integrations, and creating mobile-friendly websites 
+          for gyms and service agencies.
+        </p>
+        
+        <p>
+          I also founded{" "}
+          <a href="https://justanime.to" target="_blank" rel="noopener noreferrer">
+            JustAnime
+          </a>
+          , a clean & ad-free anime streaming platform, and{" "}
+          <a href="https://bookcafe-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">
+            BookCafe
+          </a>
+          , an educational platform for students and teachers to discover and manage digital books.
+        </p>
+        
+        <p>
+          My tech stack includes JavaScript, React, Node.js, Java, Spring Boot, Laravel, and PostgreSQL. 
+          I'm constantly learning and building new things.
+        </p>
+        
+        <p>
+          You can see my projects{" "}
+          <a href="/projects">here</a>.
+        </p>
+        
+        <p>Please feel free to connect with me using the details below.</p>
+        
+        <hr />
+        
+        <ul>
+          <li>
+            GitHub{" "}
+            <a href="https://github.com/tejaspanchall" target="_blank" rel="noopener noreferrer">
+              @tejaspanchall
+            </a>
+          </li>
+          <li>
+            LinkedIn{" "}
+            <a href="https://www.linkedin.com/in/tejaspanchall" target="_blank" rel="noopener noreferrer">
+              Tejas Panchal
+            </a>
+          </li>
+          <li>
+            Email{" "}
+            <a href="mailto:tejaspanchal127@gmail.com">
+              tejaspanchal127@gmail.com
+            </a>
+          </li>
+        </ul>
+      </main>
+      
+      <Footer />
     </div>
   );
 };

@@ -2,119 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Gamer Pixelated Portfolio Design System - Arcade/Gaming Theme
-All colors MUST be HSL. Bright arcade gaming aesthetic.
+/* Minimal Clean Portfolio Design System
+All colors MUST be HSL. Clean, professional aesthetic.
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Dark pastel background theme */
-    --background: 250 15% 12%;
-    --foreground: 280 25% 85%;
+    /* Light clean background */
+    --background: 0 0% 98%;
+    --foreground: 220 14% 25%;
 
-    --card: 250 20% 16%;
-    --card-foreground: 280 25% 85%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 14% 25%;
 
-    --popover: 250 20% 16%;
-    --popover-foreground: 280 25% 85%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 14% 25%;
 
-    /* Dark pastel blue as primary */
-    --primary: 220 50% 65%;
-    --primary-foreground: 220 30% 15%;
+    /* Slate blue primary for links */
+    --primary: 215 25% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Dark pastel pink secondary */
-    --secondary: 320 45% 70%;
-    --secondary-foreground: 320 25% 15%;
+    /* Muted secondary */
+    --secondary: 220 10% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Dark pastel purple muted */
-    --muted: 260 20% 25%;
-    --muted-foreground: 280 20% 70%;
+    /* Light muted */
+    --muted: 220 10% 94%;
+    --muted-foreground: 220 10% 45%;
 
-    /* Dark pastel mint accent */
-    --accent: 180 40% 65%;
-    --accent-foreground: 180 25% 15%;
+    /* Subtle accent */
+    --accent: 220 10% 94%;
+    --accent-foreground: 220 14% 25%;
 
-    /* Dark pastel red for errors */
-    --destructive: 0 50% 65%;
-    --destructive-foreground: 0 25% 15%;
+    /* Error state */
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Dark borders and inputs */
-    --border: 280 25% 30%;
-    --input: 250 15% 20%;
-    --ring: 220 50% 65%;
+    /* Borders and inputs */
+    --border: 220 10% 88%;
+    --input: 220 10% 94%;
+    --ring: 215 25% 45%;
 
-    /* Sharp pixel radius for gaming look */
-    --radius: 0px;
-
-    /* Dark pastel gaming colors */
-    --neon-green: 120 45% 60%;
-    --neon-yellow: 60 50% 65%;
-    --neon-orange: 30 50% 65%;
-    --neon-purple: 280 45% 65%;
-    
-    /* Soft shadows without glow */
-    --shadow-neon: 4px 4px 0px hsl(var(--primary));
-    --shadow-neon-hover: 6px 6px 0px hsl(var(--primary));
-    --shadow-pink: 4px 4px 0px hsl(var(--secondary));
-    
-    /* Gaming animations */
-    --transition-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Standard radius */
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 14% 10%;
+    --foreground: 220 10% 90%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 14% 12%;
+    --card-foreground: 220 10% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 14% 12%;
+    --popover-foreground: 220 10% 90%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 215 25% 65%;
+    --primary-foreground: 220 14% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 10% 60%;
+    --secondary-foreground: 220 14% 10%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 10% 18%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 220 10% 18%;
+    --accent-foreground: 220 10% 90%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 220 10% 20%;
+    --input: 220 10% 18%;
+    --ring: 215 25% 65%;
+
+    --sidebar-background: 220 14% 10%;
+    --sidebar-foreground: 220 10% 90%;
+    --sidebar-primary: 215 25% 65%;
+    --sidebar-primary-foreground: 220 14% 10%;
+    --sidebar-accent: 220 10% 18%;
+    --sidebar-accent-foreground: 220 10% 90%;
+    --sidebar-border: 220 10% 20%;
+    --sidebar-ring: 215 25% 65%;
   }
 }
 
@@ -124,117 +104,39 @@ All colors MUST be HSL. Bright arcade gaming aesthetic.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  a {
+    @apply text-primary underline decoration-primary/40 underline-offset-2 hover:decoration-primary transition-colors;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  ul {
+    @apply list-disc pl-6 mb-4;
+  }
+
+  li {
+    @apply mb-1;
+  }
+
+  hr {
+    @apply border-t border-border my-8;
   }
 }
 
 @layer components {
-  /* Gaming button styles */
-  .btn-game {
-    @apply border-2 bg-card text-primary font-bold px-4 py-2 transition-all duration-200;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 12px;
-    box-shadow: var(--shadow-neon);
-    border-image: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary))) 1;
-  }
-  
-  .btn-game:hover {
-    @apply bg-primary text-primary-foreground;
-    box-shadow: var(--shadow-neon-hover);
-    transform: translate(-2px, -2px) scale(1.05);
-  }
-  
-  .btn-game:active {
-    box-shadow: 2px 2px 0px hsl(var(--primary));
-    transform: translate(2px, 2px) scale(0.95);
-  }
-
-  /* Gaming card styles */
-  .card-game {
-    @apply bg-card border-2 p-6 relative overflow-hidden;
-    border-image: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary))) 1;
-    box-shadow: var(--shadow-neon);
-  }
-  
-  .card-game:hover {
-    box-shadow: var(--shadow-neon-hover);
-    transform: translate(-2px, -2px);
-  }
-
-  .card-game::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    transition: left 0.5s;
-  }
-
-  .card-game:hover::before {
-    left: 100%;
-  }
-
-  /* Gaming text effects */
-  .text-gamer {
-    font-family: 'Orbitron', monospace;
-    @apply text-primary;
-  }
-  
-  .text-pixel {
-    font-family: 'Press Start 2P', monospace;
-  }
-
-  /* Removed glow effects for pastel theme */
-  .neon-glow {
-    /* No text shadow for pastel theme */
-  }
-
-  /* Gaming health/progress bar */
-  .health-bar {
-    @apply relative bg-muted border-2 border-primary overflow-hidden;
-    height: 16px;
-  }
-
-  .health-bar::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 2px,
-      rgba(255,255,255,0.1) 2px,
-      rgba(255,255,255,0.1) 4px
-    );
-  }
-
-  /* Gaming achievement badge */
-  .achievement {
-    @apply bg-gradient-to-r from-secondary to-accent text-accent-foreground px-3 py-1 border-2 border-accent;
-    animation: pulse 2s infinite;
-  }
-
-  /* Retro scanlines effect but more subtle for gaming */
-  .game-scanlines::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      transparent 50%, 
-      rgba(0, 150, 255, 0.02) 50%
-    );
-    background-size: 100% 3px;
-    pointer-events: none;
+  .container-narrow {
+    @apply max-w-2xl mx-auto px-6;
   }
 }
