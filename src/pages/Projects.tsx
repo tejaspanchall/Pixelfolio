@@ -1,141 +1,99 @@
-import PixelNavigation from "@/components/PixelNavigation";
-import PixelCard from "@/components/PixelCard";
-import PixelButton from "@/components/PixelButton";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const Projects = () => {
   const projects = [
     {
-      title: "JUSTANIME",
-      tech: ["REACT", "NODE.JS"],
+      title: "JustAnime",
       description: "Clean & ad-free anime streaming website, offering a smooth viewing experience.",
-      status: "IN_PROGRESS",
-      color: "text-primary",
-      codeUrl: "https://github.com/tejaspanchall/justanime",
-      demoUrl: "https://justanime.to"
+      tech: ["React", "Node.js"],
+      status: "In Progress",
+      links: {
+        code: "https://github.com/tejaspanchall/justanime",
+        demo: "https://justanime.to"
+      }
     },
     {
-      title: "PROFITUALS",
-      tech: ["NEXT.JS", "NODE.JS", "POSTGRESQL"],
+      title: "Profituals",
       description: "Earn Real INR For Simple Online Tasks.",
-      status: "IN_PROGRESS",
-      color: "text-secondary",
-      codeUrl: "https://github.com/tejaspanchall/profituals",
-      demoUrl: "https://profituals.com"
+      tech: ["Next.js", "Node.js", "PostgreSQL"],
+      status: "In Progress",
+      links: {
+        demo: "https://profituals.com"
+      }
     },
     {
-      title: "C75 TRAINING",
-      tech: ["NEXT.JS"],
-      description: "More than just a gym - we're a community dedicated to helping you become your personal best.",
-      status: "LIVE",
-      color: "text-accent",
-      codeUrl: "https://github.com/username/weather-api",
-      demoUrl: "https://c75training.com"
+      title: "C75 Training",
+      description: "More than just a gym - a community dedicated to helping you become your personal best.",
+      tech: ["Next.js"],
+      status: "Live",
+      links: {
+        demo: "https://c75training.com"
+      }
     },
     {
-      title: "BANK ATM SIMULATOR",
-      tech: ["SPRING BOOT", "POSTGRESQL", "ZXING"],
-      description: "It is an end-to-end application that simulates ATM system with a Java Spring Boot backend and PostgreSQL database.",
-      status: "COMPLETED",
-      color: "text-pixel-blue",
-      codeUrl: "https://github.com/tejaspanchall/Bank-ATM-Simulator",
-      demoUrl: "https://portfolio-web-demo.vercel.app"
+      title: "Bank ATM Simulator",
+      description: "End-to-end application that simulates ATM system with Java Spring Boot backend and PostgreSQL database.",
+      tech: ["Spring Boot", "PostgreSQL", "ZXing"],
+      status: "Completed",
+      links: {
+        code: "https://github.com/tejaspanchall/Bank-ATM-Simulator"
+      }
     },
     {
-      title: "BOOKCAFE",
-      tech: ["NEXT.JS", "LARAVEL", "POSTGRESQL"],
-      description: "An educational platform designed for students and teachers to discover, read, and manage digital books.",
-      status: "COMPLETED",
-      color: "text-pixel-purple",
-      codeUrl: "https://github.com/tejaspanchall/BookCafe-Frontend",
-      demoUrl: "https://bookcafe-frontend.vercel.app/"
+      title: "BookCafe",
+      description: "Educational platform for students and teachers to discover, read, and manage digital books.",
+      tech: ["Next.js", "Laravel", "PostgreSQL"],
+      status: "Completed",
+      links: {
+        code: "https://github.com/tejaspanchall/BookCafe-Frontend",
+        demo: "https://bookcafe-frontend.vercel.app/"
+      }
     }
   ];
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "DEPLOYED":
-      case "LIVE":
-        return "text-primary";
-      case "IN_PROGRESS":
-      case "BETA":
-        return "text-secondary";
-      case "COMPLETED":
-        return "text-accent";
-      default:
-        return "text-muted-foreground";
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-background game-scanlines pt-16">
-      <PixelNavigation />
+    <div className="min-h-screen bg-background flex flex-col">
+      <Navigation />
       
-      <div className="container mx-auto px-4 py-12">
-        <div className="mb-8">
-          <h1 className="text-pixel text-3xl text-primary mb-2">PROJECTS.EXE</h1>
-          <p className="text-terminal text-sm text-foreground">
-            A collection of my recent development projects and experiments.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <PixelCard key={project.title} className="h-full flex flex-col">
-              <div className="mb-4">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className={`text-pixel text-sm ${project.color}`}>
-                    {project.title}
-                  </h3>
-                  <span className={`text-pixel text-xs ${getStatusColor(project.status)}`}>
-                    [{project.status}]
-                  </span>
-                </div>
-                
-                <div className="flex flex-wrap gap-1 mb-3">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs bg-muted text-muted-foreground px-2 py-1 border border-primary"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                
-                <p className="text-terminal text-sm text-foreground leading-relaxed">
-                  {project.description}
-                </p>
-              </div>
-              
-              <div className="mt-auto flex gap-4 justify-center">
-                {project.title !== "PROFITUALS" && project.title !== "C75 TRAINING" && (
-                  <PixelButton 
-                    size="sm" 
-                    variant="primary" 
-                    className="w-24 text-center"
-                    href={project.codeUrl}
-                    external
-                  >
-                    VIEW_CODE
-                  </PixelButton>
-                )}
-                {project.title !== "BANK ATM SIMULATOR" && (
-                  <PixelButton 
-                    size="sm" 
-                    variant="accent" 
-                    className="w-24 text-center"
-                    href={project.demoUrl}
-                    external
-                  >
-                    LIVE_DEMO
-                  </PixelButton>
-                )}
-              </div>
-            </PixelCard>
-          ))}
-        </div>
-
-      </div>
+      <main className="container-narrow flex-1">
+        <h1 className="text-3xl font-bold mb-8">Projects</h1>
+        
+        <p className="mb-8">A collection of my recent development projects and experiments.</p>
+        
+        {projects.map((project, index) => (
+          <div key={project.title} className={index !== projects.length - 1 ? "mb-8" : ""}>
+            <p>
+              <strong>{project.title}</strong>
+              {" "}
+              <span className="text-muted-foreground text-sm">({project.status})</span>
+            </p>
+            <p className="text-muted-foreground">{project.description}</p>
+            <p className="text-sm">
+              <span className="text-muted-foreground">Tech: </span>
+              {project.tech.join(", ")}
+            </p>
+            <p className="text-sm">
+              {project.links.code && (
+                <>
+                  <a href={project.links.code} target="_blank" rel="noopener noreferrer">
+                    View Code
+                  </a>
+                  {project.links.demo && " · "}
+                </>
+              )}
+              {project.links.demo && (
+                <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
+                  Live Demo
+                </a>
+              )}
+            </p>
+            {index !== projects.length - 1 && <hr className="my-6" />}
+          </div>
+        ))}
+      </main>
+      
+      <Footer />
     </div>
   );
 };

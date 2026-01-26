@@ -61,22 +61,10 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				},
-				gaming: {
-					green: 'hsl(var(--neon-green))',
-					yellow: 'hsl(var(--neon-yellow))',
-					orange: 'hsl(var(--neon-orange))',
-					purple: 'hsl(var(--neon-purple))'
 				}
 			},
 			fontFamily: {
-				pixel: ['Press Start 2P', 'monospace'],
-				gamer: ['Orbitron', 'monospace'],
-			},
-			boxShadow: {
-				neon: 'var(--shadow-neon)',
-				'neon-hover': 'var(--shadow-neon-hover)',
-				'neon-pink': 'var(--shadow-pink)',
+				sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
