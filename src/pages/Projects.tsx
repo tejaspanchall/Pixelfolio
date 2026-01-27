@@ -54,10 +54,13 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <div className="container-narrow">
+        <h1 className="text-4xl font-bold mt-12 mb-4">Projects</h1>
+      </div>
+      
       <Navigation />
       
       <main className="container-narrow flex-1">
-        <h1 className="text-3xl font-bold mb-8">Projects</h1>
         
         <p className="mb-8">A collection of my recent development projects and experiments.</p>
         
