@@ -54,7 +54,7 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <h1 className="text-4xl font-bold mt-12 mb-4 px-6">Projects</h1>
+      <h1 className="text-4xl font-bold mt-12 mb-4 container-narrow">Projects</h1>
       
       <Navigation />
       
