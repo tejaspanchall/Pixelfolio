@@ -1,5 +1,4 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 
 const Projects = () => {
   const projects = [
@@ -54,14 +53,11 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <h1 className="text-4xl font-bold mt-12 mb-4 container-narrow">Projects</h1>
-      
-      <Navigation />
-      
-      <main className="container-narrow flex-1">
-        
+      <main className="container-narrow flex-1 py-16">
+        <h1 className="text-4xl font-bold mb-2 tracking-tighter">Projects</h1>
+        <Navigation />
         <p className="mb-8">A collection of my recent development projects and experiments.</p>
-        
+
         {projects.map((project, index) => (
           <div key={project.title} className={index !== projects.length - 1 ? "mb-8" : ""}>
             <p>
@@ -93,8 +89,6 @@ const Projects = () => {
           </div>
         ))}
       </main>
-      
-      <Footer />
     </div>
   );
 };

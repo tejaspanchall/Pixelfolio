@@ -36,17 +36,16 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="py-8">
-      <div className="container-narrow flex justify-end items-center gap-6">
+    <nav className="mb-8">
+      <div className="flex justify-end items-center gap-3">
         {navItems.map((item) => (
           <Link
             key={item.path}
             to={item.path}
-            className={`text-foreground hover:text-foreground ${
-              location.pathname === item.path
-                ? "no-underline"
-                : "underline decoration-muted-foreground/40 underline-offset-2 hover:decoration-foreground"
-            }`}
+            className={`text-foreground hover:text-foreground ${location.pathname === item.path
+              ? "no-underline"
+              : "underline decoration-muted-foreground/40 underline-offset-2 hover:decoration-foreground"
+              }`}
           >
             {item.name}
           </Link>

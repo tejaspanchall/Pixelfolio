@@ -1,21 +1,18 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 
 const Contact = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <Navigation />
-      
-      <main className="container-narrow flex-1">
-        <h1 className="text-3xl font-bold mb-8">Contact</h1>
-        
+      <main className="container-narrow flex-1 py-16">
+        <h1 className="text-4xl font-bold mb-2 tracking-tighter">Contact</h1>
+        <Navigation />
         <p>
-          I'm currently open to job opportunities, freelance projects, collaborations, 
+          I'm currently open to job opportunities, freelance projects, collaborations,
           and interesting challenges. Feel free to reach out!
         </p>
-        
+
         <hr />
-        
+
         <ul>
           <li>
             GitHub{" "}
@@ -37,8 +34,6 @@ const Contact = () => {
           </li>
         </ul>
       </main>
-      
-      <Footer />
     </div>
   );
 };

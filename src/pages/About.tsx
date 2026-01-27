@@ -1,17 +1,13 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <h1 className="text-4xl font-bold mt-12 mb-4 container-narrow">About</h1>
-      
-      <Navigation />
-      
-      <main className="container-narrow flex-1">
-        
+      <main className="container-narrow flex-1 py-16">
+        <h1 className="text-4xl font-bold mb-2 tracking-tighter">About</h1>
+        <Navigation />
         <h2 className="text-xl font-semibold mt-8 mb-4">Experience</h2>
-        
+
         <p>
           <strong>Jr. Software Engineer</strong> — DMI Systems Pvt. Ltd.
           <br />
@@ -22,7 +18,7 @@ const About = () => {
           <li>Developed and tested RESTful APIs for authentication, product, and order management</li>
           <li>Optimized backend data exchange between React frontend and Laravel APIs</li>
         </ul>
-        
+
         <p>
           <strong>Website Developer</strong> — GinX Media Pvt. Ltd.
           <br />
@@ -33,7 +29,7 @@ const About = () => {
           <li>Designed and deployed mobile-friendly gym websites with class schedules and lead capture</li>
           <li>Created service-oriented websites with dynamic content and SEO optimization</li>
         </ul>
-        
+
         <p>
           <strong>Founder & Project Developer</strong> — beingotaku
           <br />
@@ -44,19 +40,19 @@ const About = () => {
           <li>Applied advanced SEO strategies, leading to 50% growth in organic traffic</li>
           <li>Managed end-to-end fulfillment for 200+ orders with 98% customer satisfaction</li>
         </ul>
-        
+
         <hr />
-        
+
         <h2 className="text-xl font-semibold mt-8 mb-4">Skills</h2>
-        
+
         <p><strong>Languages:</strong> JavaScript, Java, Python, SQL, PHP, HTML/CSS</p>
         <p><strong>Frameworks:</strong> React, Node.js, Spring Boot, Laravel, Next.js</p>
         <p><strong>Tools:</strong> Git/GitHub, Vercel, Postman, VS Code, IntelliJ IDEA</p>
-        
+
         <hr />
-        
+
         <h2 className="text-xl font-semibold mt-8 mb-4">Certifications</h2>
-        
+
         <ul>
           <li>
             <a href="https://www.coursera.org/account/accomplishments/certificate/99QZX4WR57KF" target="_blank" rel="noopener noreferrer">
@@ -72,8 +68,6 @@ const About = () => {
           </li>
         </ul>
       </main>
-      
-      <Footer />
     </div>
   );
 };
