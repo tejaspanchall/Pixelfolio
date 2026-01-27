@@ -13,6 +13,15 @@ const Projects = () => {
       }
     },
     {
+      title: "GinX Media",
+      description: "Developing reward-based platforms with payment integrations and mobile-friendly websites.",
+      tech: ["Web Development", "Payment Integration"],
+      status: "Completed",
+      links: {
+        demo: "https://ginxmedia.co"
+      }
+    },
+    {
       title: "Profituals",
       description: "Earn Real INR For Simple Online Tasks.",
       tech: ["Next.js", "Node.js", "PostgreSQL"],
@@ -45,10 +54,9 @@ const Projects = () => {
       tech: ["Next.js", "Laravel", "PostgreSQL"],
       status: "Completed",
       links: {
-        code: "https://github.com/tejaspanchall/BookCafe-Frontend",
-        demo: "https://bookcafe-frontend.vercel.app/"
+        code: "https://github.com/tejaspanchall/BookCafe-Frontend"
       }
-    }
+    },
   ];
 
   return (
@@ -56,38 +64,55 @@ const Projects = () => {
       <main className="container-narrow flex-1 py-16">
         <h1 className="text-4xl font-bold mb-2 tracking-tighter">Projects</h1>
         <Navigation />
-        <p className="mb-8">A collection of my recent development projects and experiments.</p>
+        <p>A collection of my recent development projects and experiments.</p>
 
-        {projects.map((project, index) => (
-          <div key={project.title} className={index !== projects.length - 1 ? "mb-8" : ""}>
-            <p>
-              <strong>{project.title}</strong>
-              {" "}
-              <span className="text-muted-foreground text-sm">({project.status})</span>
-            </p>
-            <p className="text-muted-foreground">{project.description}</p>
-            <p className="text-sm">
-              <span className="text-muted-foreground">Tech: </span>
-              {project.tech.join(", ")}
-            </p>
-            <p className="text-sm">
-              {project.links.code && (
-                <>
-                  <a href={project.links.code} target="_blank" rel="noopener noreferrer">
-                    View Code
-                  </a>
-                  {project.links.demo && " · "}
-                </>
-              )}
-              {project.links.demo && (
-                <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
-                  Live Demo
-                </a>
-              )}
-            </p>
-            {index !== projects.length - 1 && <hr className="my-6" />}
+        <div className="flex flex-wrap gap-4 mb-8 text-xs font-medium uppercase tracking-wider text-muted-foreground/80">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-500/80" />
+            <span>Live</span>
           </div>
-        ))}
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-amber-500/80" />
+            <span>In Progress</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-blue-500/80" />
+            <span>Completed</span>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          {projects.map((project) => (
+            <div key={project.title}>
+              <div className="flex items-center gap-2 mb-1">
+                <span className={`w-2 h-2 rounded-full shrink-0 ${project.status === "Live" ? "bg-emerald-500/80" :
+                  project.status === "In Progress" ? "bg-amber-500/80" :
+                    "bg-blue-500/80"
+                  }`} />
+                <h3 className="text-xl font-bold text-foreground">
+                  {project.title}
+                </h3>
+              </div>
+
+              <p className="text-sm text-muted-foreground mb-1">
+                {project.description}
+              </p>
+
+              <div className="text-sm space-x-3">
+                {project.links.code && (
+                  <a href={project.links.code} target="_blank" rel="noopener noreferrer">
+                    Code
+                  </a>
+                )}
+                {project.links.demo && (
+                  <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
+                    Demo
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
       </main>
     </div>
   );

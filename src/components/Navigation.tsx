@@ -30,7 +30,6 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { name: "About", path: "/about", isLink: true },
     { name: "Tejas Panchal", path: "/", isName: true },
     { name: "Projects", path: "/projects", isLink: true },
   ];
@@ -55,7 +54,7 @@ const Navigation = () => {
           className="text-muted-foreground hover:text-foreground transition-colors p-1"
           aria-label="Toggle theme"
         >
-          {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          {isDark ? <Moon size={18} /> : <Sun size={18} />}
         </button>
       </div>
     </nav>

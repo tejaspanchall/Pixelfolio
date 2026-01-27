@@ -45,7 +45,7 @@ const Index = () => {
 
         <p>
           You can see my projects{" "}
-          <a href="/projects">here</a>.
+          <a href="/projects">here</a> or view my <a href="/Tejas Panchal Resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>.
         </p>
 
         <p>Please feel free to connect with me using the details below.</p>
