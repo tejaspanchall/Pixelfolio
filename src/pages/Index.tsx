@@ -5,7 +5,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <div className="container-narrow">
-        <h1 className="text-3xl font-bold mt-12 mb-4">Tejas Panchal</h1>
+        <h1 className="text-4xl font-bold mt-12 mb-4">Tejas Panchal</h1>
       </div>
       
       <Navigation />
