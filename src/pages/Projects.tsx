@@ -4,7 +4,7 @@ const Projects = () => {
   const projects = [
     {
       title: "JustAnime",
-      description: "Clean & ad-free anime streaming website, offering a smooth viewing experience.",
+      description: "An anime streaming website, offering a smooth viewing experience.",
       links: {
         code: "https://github.com/tejaspanchall/justanime",
         demo: "https://justanime.to"
@@ -33,7 +33,7 @@ const Projects = () => {
     },
     {
       title: "Bank ATM Simulator",
-      description: "End-to-end application that simulates ATM system with Java Spring Boot backend and PostgreSQL database.",
+      description: "End-to-end application that simulates ATM system with realtime UPI withdrawal and deposit feature and inventory management.",
       links: {
         code: "https://github.com/tejaspanchall/Bank-ATM-Simulator"
       }

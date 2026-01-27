@@ -9,44 +9,27 @@ const Index = () => {
         <p>I'm Tejas. 👋🏽</p>
 
         <p>
-          I'm a passionate Software Engineer with 2+ years of experience building robust web applications.
-          Currently working as a Jr. Software Engineer at{" "}
-          <a href="https://www.dmisystems.in/" target="_blank" rel="noopener noreferrer">
-            DMI Systems Pvt. Ltd.
-          </a>
-          , where I develop full-stack solutions using React.js, Laravel, and PostgreSQL.
+          I’m a Software Engineer with 2+ years of experience building scalable, user-focused web applications.
+          View my <a href="/Tejas Panchal Resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>.
         </p>
 
         <p>
-          Previously, I worked as a Website Developer at{" "}
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            GinX Media
-          </a>
-          , building reward-based platforms with payment integrations, and creating mobile-friendly websites
-          for gyms and service agencies.
+          Currently building <a href="https://justanime.to" target="_blank" rel="noopener noreferrer">JustAnime</a>,
+          an anime streaming platform with 1000+ daily active users, where I work across the full stack and focus on performance and reliability.
         </p>
 
         <p>
-          I also founded{" "}
-          <a href="https://justanime.to" target="_blank" rel="noopener noreferrer">
-            JustAnime
-          </a>
-          , a clean & ad-free anime streaming platform, and{" "}
-          <a href="https://bookcafe-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">
-            BookCafe
-          </a>
-          , an educational platform for students and teachers to discover and manage digital books.
+          Prior to this I worked as a Jr. Software Engineer at <a href="https://a11y.pub/" target="_blank" rel="noopener noreferrer">DMI Systems</a>,
+          where I led the refactoring of their existing education platform to a modern tech stack.
         </p>
 
         <p>
-          My tech stack includes JavaScript, React, Node.js, Java, Spring Boot, Laravel, and PostgreSQL.
-          I'm constantly learning and building new things.
+          Started my career as a Website Developer at <a href="https://ginxmedia.co/" target="_blank" rel="noopener noreferrer">GinX Media</a>.
+        </p>
+        <p>
+          I graduated from NMIMS with an MCA in 2025 and from MKS College with a BScIT in 2023.
         </p>
 
-        <p>
-          You can see my projects{" "}
-          <a href="/projects">here</a> or view my <a href="/Tejas Panchal Resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>.
-        </p>
 
         <p>Please feel free to connect with me using the details below.</p>
 
