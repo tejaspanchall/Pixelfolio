@@ -42,10 +42,12 @@ const Navigation = () => {
           <Link
             key={item.path}
             to={item.path}
-            className={`no-underline hover:no-underline ${
+            className={`text-foreground hover:text-foreground ${
               item.isName 
-                ? "text-foreground hover:text-foreground" 
-                : "text-primary underline decoration-primary/40 underline-offset-2 hover:decoration-primary"
+                ? "no-underline" 
+                : location.pathname === item.path
+                  ? "no-underline"
+                  : "underline decoration-muted-foreground/40 underline-offset-2 hover:decoration-foreground"
             }`}
           >
             {item.name}
