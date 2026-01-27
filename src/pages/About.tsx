@@ -4,10 +4,13 @@ import Footer from "@/components/Footer";
 const About = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <div className="container-narrow">
+        <h1 className="text-4xl font-bold mt-12 mb-4">About</h1>
+      </div>
+      
       <Navigation />
       
       <main className="container-narrow flex-1">
-        <h1 className="text-3xl font-bold mb-8">About</h1>
         
         <h2 className="text-xl font-semibold mt-8 mb-4">Experience</h2>
         
