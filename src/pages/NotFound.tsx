@@ -1,26 +1,22 @@
 import { Link } from "react-router-dom";
-import PixelButton from "@/components/PixelButton";
-import PixelCard from "@/components/PixelCard";
-import PixelNavigation from "@/components/PixelNavigation";
+import Navigation from "@/components/Navigation";
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen bg-background game-scanlines pt-16">
-      <PixelNavigation />
-      <div className="flex items-center justify-center min-h-[calc(100vh-4rem)]">
-        <PixelCard className="max-w-md mx-4 text-center">
-          <div className="text-pixel text-6xl text-destructive mb-4">404</div>
-          <h1 className="text-pixel text-2xl text-primary mb-6">GAME OVER</h1>
-          <p className="text-gamer text-muted-foreground mb-6">
-            The level you're looking for doesn't exist or has been moved to another castle.
+    <div className="min-h-screen bg-background">
+      <main className="container-narrow py-16">
+        <Navigation />
+        <div className="flex flex-col items-center justify-center min-h-[50vh] text-center">
+          <h1 className="text-6xl font-bold mb-4">404</h1>
+          <h2 className="text-2xl font-semibold mb-6">Page Not Found</h2>
+          <p className="text-muted-foreground mb-8">
+            The page you're looking for doesn't exist or has been moved.
           </p>
-          <Link to="/">
-            <PixelButton variant="accent">
-              CONTINUE [HOME]
-            </PixelButton>
+          <Link to="/" className="text-primary hover:underline">
+            Go back home
           </Link>
-        </PixelCard>
-      </div>
+        </div>
+      </main>
     </div>
   );
 };
