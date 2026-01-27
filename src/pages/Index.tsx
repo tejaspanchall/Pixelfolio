@@ -4,11 +4,13 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <div className="container-narrow">
+        <h1 className="text-3xl font-bold mt-12 mb-4">Tejas Panchal</h1>
+      </div>
+      
       <Navigation />
       
       <main className="container-narrow flex-1">
-        <h1 className="text-3xl font-bold mb-8">Tejas Panchal</h1>
-        
         <p>I'm Tejas. 👋🏽</p>
         
         <p>
