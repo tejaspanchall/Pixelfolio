@@ -14,7 +14,7 @@ const Index = () => {
         </p>
 
         <p>
-          Currently building <a href="https://justanime.to" target="_blank" rel="noopener noreferrer">JustAnime</a>,
+          Currently building <a href="https://justanime.site" target="_blank" rel="noopener noreferrer">JustAnime</a>,
           an anime streaming platform with 1000+ daily active users, where I work across the full stack and focus on performance and reliability.
         </p>
 
